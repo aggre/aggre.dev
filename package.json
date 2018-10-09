@@ -23,7 +23,9 @@
 	"homepage": "https://github.com/aggre/aggre.io#readme",
 	"dependencies": {
 		"@types/node": "^10.11.5",
-		"typescript": "^3.1.1"
+		"lit-html": "^0.12.0",
+		"typescript": "^3.1.1",
+		"ullr": "^0.8.1"
 	},
 	"devDependencies": {
 		"parcel": "^1.10.2",
