@@ -5,13 +5,11 @@
 	"description": "Website for aggre",
 	"main": "index.js",
 	"scripts": {
-		"start": "serve",
+		"start": "parcel src/index.html",
+		"prestart": "npm run lint",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "tsc -p ./",
-		"prebuild": "npm run lint",
 		"lint": "tslint --fix -p ./",
-		"format": "prettier --write '**/*.{json,md}'",
-		"prepare": "npm run build"
+		"format": "prettier --write '**/*.{json,md}'"
 	},
 	"repository": {
 		"type": "git",
@@ -25,10 +23,10 @@
 	"homepage": "https://github.com/aggre/aggre.io#readme",
 	"dependencies": {
 		"@types/node": "^10.11.5",
-		"serve": "^10.0.2",
 		"typescript": "^3.1.1"
 	},
 	"devDependencies": {
+		"parcel": "^1.10.2",
 		"prettier": "^1.14.3",
 		"tslint": "^5.11.0",
 		"tslint-config-prettier": "^1.15.0",
