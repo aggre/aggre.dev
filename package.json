@@ -5,6 +5,7 @@
 	"description": "Website for aggre",
 	"main": "index.js",
 	"scripts": {
+		"start": "serve",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "tsc -p ./",
 		"prebuild": "npm run lint",
@@ -24,6 +25,7 @@
 	"homepage": "https://github.com/aggre/aggre.io#readme",
 	"dependencies": {
 		"@types/node": "^10.11.5",
+		"serve": "^10.0.2",
 		"typescript": "^3.1.1"
 	},
 	"devDependencies": {
