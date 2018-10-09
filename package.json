@@ -1,0 +1,36 @@
+{
+	"name": "aggre.io",
+	"private": true,
+	"version": "1.0.0",
+	"description": "Website for aggre",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "tsc -p ./",
+		"prebuild": "npm run lint",
+		"lint": "tslint --fix -p ./",
+		"format": "prettier --write '**/*.{json,md}'",
+		"prepare": "npm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aggre/aggre.io.git"
+	},
+	"author": "",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/aggre/aggre.io/issues"
+	},
+	"homepage": "https://github.com/aggre/aggre.io#readme",
+	"dependencies": {
+		"@types/node": "^10.11.5",
+		"typescript": "^3.1.1"
+	},
+	"devDependencies": {
+		"prettier": "^1.14.3",
+		"tslint": "^5.11.0",
+		"tslint-config-prettier": "^1.15.0",
+		"tslint-plugin-prettier": "^2.0.0",
+		"tslint-xo": "^0.9.0"
+	}
+}
