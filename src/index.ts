@@ -1,5 +1,5 @@
 import { render, html } from 'lit-html'
-import { xApp } from './component/x-app'
+import { xApp } from './element/x-app'
 
 customElements.define('x-app', xApp)
 
