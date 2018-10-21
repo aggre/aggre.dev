@@ -6,5 +6,5 @@ customElements.define('x-app', xApp)
 const root = document.getElementById('root')
 
 if (root) {
-	render(html`<x-app>🍣</x-app>`, root)
+	render(html`<x-app><h1>🍣</h1><p>すし</p></x-app>`, root)
 }
