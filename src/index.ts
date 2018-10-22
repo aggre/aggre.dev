@@ -7,8 +7,10 @@ import { routeChange } from './action/route'
 const { customElements } = window
 
 customElements.define('x-app', xApp)
-
-route.subscribe(x => fetchContent(x))
+;(() => {
+	fetchContent()
+	route.subscribe(x => fetchContent(x))
+})()
 
 const root = document.getElementById('root')
 

@@ -1,10 +1,9 @@
-import { BehaviorSubject, merge, fromEvent } from 'rxjs'
+import { merge, fromEvent } from 'rxjs'
+import { map } from 'rxjs/operators'
 
 const { location } = window
-const { pathname } = location
 
-export const route = new BehaviorSubject(pathname)
-
-merge(fromEvent(window, 'popstate'), fromEvent(window, 'hashchange')).subscribe(
-	() => route.next(location.pathname)
-)
+export const route = merge(
+	fromEvent(window, 'popstate'),
+	fromEvent(window, 'hashchange')
+).pipe(map(() => location.pathname))
