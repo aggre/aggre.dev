@@ -6,9 +6,7 @@ const { location } = window
 
 const convertUrl = (path: string) => `${path === '/' ? 'index' : path}.md`
 
-export const fetchContent = (path?: string) =>
+export const fetchContent = async (path?: string) =>
 	fetch(convertUrl(path || location.pathname))
-		.then(res => res.text())
-		.then(text => {
-			content.next(html`${unsafeHTML(parse(text))}`)
-		})
+		.then(async res => res.text())
+		.then(text => content.next(html`${unsafeHTML(parse(text))}`))
