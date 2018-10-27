@@ -63,3 +63,6 @@ typings/
 # parcel build output
 dist
 .cache
+
+# tsc build output
+src/**/*.js
