@@ -1,10 +1,11 @@
 {
-	"plugins": [
+	"presets": [
 		[
-			"transform-runtime",
+			"env",
 			{
-				"polyfill": false,
-				"regenerator": true
+				"targets": {
+					"browsers": ["last 1 Chrome version"]
+				}
 			}
 		]
 	]
