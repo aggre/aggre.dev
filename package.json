@@ -12,7 +12,7 @@
 		"build": "rollup -c && npm run write && parcel build src/index.html",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint": "tslint --fix -p ./",
-		"format": "prettier --write '**/*.{json,md,*rc}'",
+		"format": "prettier --write '**/*.{json,md,js,*rc}'",
 		"dev:html": "parcel watch src/index.html",
 		"dev:ts": "rollup -c --watch"
 	},
