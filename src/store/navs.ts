@@ -1,12 +1,23 @@
 import { BehaviorSubject } from 'rxjs'
+import { route } from './route'
 
-export const navs = new BehaviorSubject([
+export interface Nav {
+	readonly label: string
+	readonly link: string
+	readonly active: boolean
+}
+
+export type Navs = ReadonlyArray<Nav>
+
+export const navs = new BehaviorSubject<Navs>([
 	{
 		label: 'home',
-		link: '/'
+		link: '/',
+		active: true
 	},
 	{
 		label: 'blog',
-		link: '/post'
+		link: '/post',
+		active: false
 	}
 ])

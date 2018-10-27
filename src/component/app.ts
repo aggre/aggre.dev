@@ -4,6 +4,16 @@ import { navs } from '../store/navs'
 import { subscribe } from 'ullr/directive'
 
 export const app = () => html`
-${subscribe(navs, x => nav(x))}
-<slot></slot>
+<style>
+	#app {
+		margin: auto;
+		max-width: 980px;
+	}
+</style>
+<div id=app>
+	${subscribe(navs, x => nav(x))}
+	<main>
+		<slot></slot>
+	</main>
+</div>
 `
