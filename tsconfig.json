@@ -6,7 +6,11 @@
 		"strictNullChecks": true,
 		"outDir": "./",
 		"module": "esnext",
-		"plugins": []
+		"plugins": [
+			{
+				"name": "typescript-lit-html-plugin"
+			}
+		]
 	},
 	"include": ["src/**/*"],
 	"exclude": []
