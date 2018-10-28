@@ -5,7 +5,20 @@ module.exports = function(config) {
 		basePath: '',
 		frameworks: ['mocha'],
 		plugins: ['karma-mocha', 'karma-mocha-reporter', 'karma-chrome-launcher'],
-		files: ['node_modules/expect.js/index.js', 'dist/test.js'],
+		files: [
+			'node_modules/expect.js/index.js',
+			'dist/test.js',
+			{
+				pattern: 'content/**',
+				included: false,
+				served: true,
+				watched: false,
+				nocache: true
+			}
+		],
+		proxies: {
+			'/': '/base/content/'
+		},
 		reporters: ['mocha'],
 		singleRun: true,
 		customLaunchers: {
