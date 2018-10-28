@@ -13,7 +13,7 @@
 		"test": "karma start",
 		"pretest": "rollup -c rollup.test.js && parcel build src/test.js",
 		"lint": "tslint --fix -p ./",
-		"format": "prettier --write '**/*.{json,md,js,*rc}'",
+		"format": "prettier --write '**/*.{json,md,js,yml,*rc}'",
 		"dev:html": "parcel watch src/index.html",
 		"dev:ts": "rollup -c --watch"
 	},
