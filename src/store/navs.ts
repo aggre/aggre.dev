@@ -1,5 +1,4 @@
 import { BehaviorSubject } from 'rxjs'
-import { route } from './route'
 
 export interface Nav {
 	readonly label: string

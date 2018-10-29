@@ -1,5 +1,5 @@
 import { html } from 'lit-html'
-import { routeChange } from '../action/route'
+import { route } from '../store/route'
 
 interface Props {
 	readonly href: string
@@ -10,7 +10,7 @@ const handler = (url: string) => (e: Event) => {
 	// tslint:disable-next-line:no-expression-statement
 	e.preventDefault()
 	// tslint:disable-next-line:no-expression-statement
-	routeChange(url)
+	route.next(url)
 }
 
 export const a = (props: Props) =>
