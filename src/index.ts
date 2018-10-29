@@ -7,14 +7,20 @@ import { fetchContent } from './lib/fetch-content'
 import { navs } from './store/navs'
 import { changeActive } from './reducer/navs'
 import { markedHTML } from './lib/marked-html'
+import { parseContent } from './lib/parse-content'
 const { customElements } = window
 
 customElements.define('x-app', xApp)
 const root = document.getElementById('root')
 
 content.subscribe(x =>
-	render(html`<x-app>${markedHTML(x)}</x-app>`, root || document.body)
+	render(
+		html`<x-app>${markedHTML(x ? x.body : '')}</x-app>`,
+		root || document.body
+	)
 )
 route.subscribe(x => history.pushState(null, '', x))
 route.subscribe(x => navs.next(changeActive(navs.value, x)))
-route.subscribe(async x => fetchContent(x).then(text => content.next(text)))
+route.subscribe(async x =>
+	fetchContent(x).then(text => content.next(parseContent(text)))
+)
