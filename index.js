@@ -9,10 +9,9 @@ module.exports = async (req, res) => {
 	if (/\..+$/.test(pathname)) {
 		handler(req, res, options)
 	} else {
-		const file = await promisify(readFile)(
+		return promisify(readFile)(
 			`${__dirname}/dist/index.html`,
 			'utf-8'
 		)
-		return file
 	}
 }
