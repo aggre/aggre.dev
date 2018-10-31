@@ -6,9 +6,8 @@ const options = require('./serve.json')
 
 module.exports = async (req, res) => {
 	const { pathname } = parse(req.url)
-	if (/\..+$/.test(pathname)) {
-		handler(req, res, options)
-	} else {
+	if (!/\..+$/.test(pathname)) {
 		return promisify(readFile)(`${__dirname}/dist/index.html`, 'utf-8')
 	}
+	handler(req, res, options)
 }
