@@ -11,12 +11,16 @@ export const app = () => html`
 			'header'
 			'main';
 		grid-gap: 3rem;
+		grid-template-columns: 100%;
 	}
 	.header {
 		grid-area: header
 	}
 	main {
 		grid-area: main;
+	}
+	::slotted(*) {
+		width: 100%;
 	}
 </style>
 <div class=app>
