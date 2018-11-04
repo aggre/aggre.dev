@@ -7,7 +7,7 @@ export const head = (
 	domain = 'aggre.io'
 ) => html`
 	<meta charset=UTF-8>
-	<meta name=viewport content='width=device-width, initial-scale=1.0'>
+	<meta name=viewport content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 	<meta http-equiv=X-UA-Compatible content='ie=edge'>
 	<meta property=og:site_name content='${domain}'>
 	<meta property=og:type content='${route === '/' ? 'website' : 'article'}'>
@@ -29,10 +29,21 @@ export const head = (
 	<title>${meta ? meta.title : ''}</title>
 	<style>
 		@import '../../node_modules/highlight.js/styles/atom-one-dark.css';
+		body {
+			margin: 0;
+			font-size: 1.1rem;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+			padding: 1rem;
+			box-sizing: border-box;
+			@media (min-width: 768px) {
+				padding: 2rem;
+			}
+		}
 		.hljs {
 			background: black;
 			border-radius: 1rem;
 			padding: 1rem;
+			box-sizing: border-box;
 		}
 	</style>
 `

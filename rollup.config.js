@@ -8,7 +8,7 @@ export default {
 	plugins: [
 		typescript(),
 		postcss({
-			plugins: [postcssImport, postcssPresetEnv]
+			plugins: [postcssImport, postcssPresetEnv({ stage: 0 })]
 		})
 	],
 	output: {
