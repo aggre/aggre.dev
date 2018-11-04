@@ -1,36 +1,14 @@
 // tslint:disable:no-expression-statement
-import { render, html, directive } from 'lit-html'
+import { render, html } from 'lit-html'
 import { xApp } from './element/x-app'
 import { content } from './store/content'
 import { route } from './store/route'
-import { fetchContent } from './lib/fetch-content'
-import { navs } from './store/navs'
-import { changeActive } from './reducer/navs'
-import { markedHTML } from './lib/marked-html'
-import { parseContent } from './lib/parse-content'
-import { head } from './component/head'
+import { contentManager } from './manager/content-manager'
+import { root } from './component/root'
 const { customElements } = window
 
 customElements.define('x-app', xApp)
 
-content.subscribe(x =>
-	render(
-		head(route.value, x ? x.meta : undefined),
-		document.head as HTMLHeadElement
-	)
-)
-route.subscribe(x => history.pushState(null, '', x))
-route.subscribe(x => navs.next(changeActive(navs.value, x)))
-route.subscribe(async x =>
-	fetchContent(x).then(text => content.next(parseContent(text)))
-)
+contentManager(route, content)
 
-const root = document.getElementById('root')
-const app = html`${directive(part => {
-	content.subscribe(x => {
-		part.setValue(html`<x-app>${markedHTML(x ? x.body : '')}</x-app>`)
-		part.commit()
-	})
-})}`
-
-render(app, root || document.body)
+render(html`${root}`, document.getElementById('root') || document.body)

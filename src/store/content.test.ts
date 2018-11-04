@@ -5,7 +5,7 @@ import { skip } from 'rxjs/operators'
 describe('content store', () => {
 	it('initial value', done => {
 		content.subscribe(x => {
-			expect(x).to.be(null)
+			expect(x).to.be.ok()
 			done()
 		})
 	})

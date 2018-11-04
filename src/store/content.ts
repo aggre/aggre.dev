@@ -5,9 +5,9 @@ export interface ContentMeta {
 	readonly image?: string
 	readonly description?: string
 }
-export interface Content {
+export type Content = {
 	readonly meta?: ContentMeta
 	readonly body: string
-}
+} | null
 
-export const content = new BehaviorSubject<Content | null>(null)
+export const content = new BehaviorSubject<Content>(null)
