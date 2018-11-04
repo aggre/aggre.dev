@@ -27,4 +27,12 @@ export const head = (
 	<meta name=twitter:card content=summary>
 	<meta name=twitter:site content=//twitter.com/aggre_>
 	<title>${meta ? meta.title : ''}</title>
+	<style>
+		@import '../../node_modules/highlight.js/styles/atom-one-dark.css';
+		.hljs {
+			background: black;
+			border-radius: 1rem;
+			padding: 1rem;
+		}
+	</style>
 `

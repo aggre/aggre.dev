@@ -3,6 +3,7 @@
 		"target": "es2015",
 		"lib": ["esnext", "dom"],
 		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
 		"strictNullChecks": true,
 		"outDir": "./",
 		"module": "esnext",
