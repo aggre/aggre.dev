@@ -4,11 +4,11 @@ import { ContentMeta } from '../store/content'
 // tslint:disable:no-expression-statement
 describe('parsing content', () => {
 	it('parsing content', async () => {
-		const content = `+++
+		const content = `\`\`\`yml
 title: すし
 image: /asset/image/sushi.png
 description: お寿司
-+++
+\`\`\`
 
 # 🍣
 
