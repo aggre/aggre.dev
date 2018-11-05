@@ -7,7 +7,7 @@ import { head } from '../component/head'
 import { BehaviorSubject, Subscription } from 'rxjs'
 import { Content } from '../store/content'
 
-export const contentManager = (
+export const base = (
 	route: BehaviorSubject<string>,
 	content: BehaviorSubject<Content>
 ) =>

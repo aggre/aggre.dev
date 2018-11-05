@@ -3,12 +3,12 @@ import { render, html } from 'lit-html'
 import { xApp } from './element/x-app'
 import { content } from './store/content'
 import { route } from './store/route'
-import { contentManager } from './manager/content-manager'
+import { base } from './manager/base'
 import { root } from './component/root'
 const { customElements } = window
 
 customElements.define('x-app', xApp)
 
-contentManager(route, content)
+base(route, content)
 
 render(html`${root}`, document.getElementById('root') || document.body)
