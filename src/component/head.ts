@@ -27,6 +27,7 @@ export const head = (
 	<meta name=twitter:card content=summary>
 	<meta name=twitter:site content=//twitter.com/aggre_>
 	<title>${meta ? meta.title : ''}</title>
+	<script async custom-element=amp-analytics src=//cdn.ampproject.org/v0/amp-analytics-0.1.js></script>
 	<style>
 		@import '../../node_modules/highlight.js/styles/atom-one-dark.css';
 		body {
