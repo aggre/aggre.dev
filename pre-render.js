@@ -12,7 +12,7 @@ const getHTML = browser => async pathname => {
 	await page.goto(`http://localhost:${port}${pathname}`, {
 		waitUntil: 'networkidle0'
 	})
-	await page.waitForSelector('x-app > *')
+	await page.waitForSelector('x-xxx').catch(err => console.warn(err))
 	const html = await page.content()
 	await page.close()
 	console.info('render end', pathname)
