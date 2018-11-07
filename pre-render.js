@@ -16,7 +16,7 @@ const getHTML = browser => async pathname =>
 					waitUntil: 'networkidle0'
 				}),
 				page.waitForSelector('x-app > *')
-			])
+			]).catch(err => console.log(err, pathname))
 		)
 		.then(async ([page]) => {
 			const html = await page.content()
