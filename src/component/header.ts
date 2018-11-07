@@ -5,7 +5,7 @@ import { subscribe, component } from 'ullr/directive'
 import { a } from './a'
 
 export const header = () =>
-	html`${component(html`
+	component(html`
 <style>
 	header {
 		display: grid;
@@ -33,4 +33,4 @@ export const header = () =>
 		${subscribe(navs, x => nav(x))}
 	</div>
 </header>
-`)}`
+`)

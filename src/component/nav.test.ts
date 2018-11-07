@@ -1,5 +1,5 @@
 import { nav } from './nav'
-import { render } from 'lit-html'
+import { render, html } from 'lit-html'
 
 const opts: ReadonlyArray<any> = [
 	{
@@ -18,14 +18,14 @@ const opts: ReadonlyArray<any> = [
 describe('<nav>', () => {
 	describe('Returns template for nav element', () => {
 		it('nav element', () => {
-			render(nav(opts), document.body)
+			render(html`${nav(opts)}`, document.body)
 			const el = (document.body.querySelector('ullr-shdw') as HTMLElement)
 				.shadowRoot as ShadowRoot
 			expect(el.querySelector('nav')).to.be.ok()
 		})
 
 		it('active and inactive', () => {
-			render(nav(opts), document.body)
+			render(html`${nav(opts)}`, document.body)
 			const el = (document.body.querySelector('ullr-shdw') as HTMLElement)
 				.shadowRoot as ShadowRoot
 			expect(
@@ -37,7 +37,7 @@ describe('<nav>', () => {
 		})
 
 		it('list of link', () => {
-			render(nav(opts), document.body)
+			render(html`${nav(opts)}`, document.body)
 			const el = (document.body.querySelector('ullr-shdw') as HTMLElement)
 				.shadowRoot as ShadowRoot
 			Array.from(el.querySelectorAll('nav > ul > li')).forEach((item, i) => {

@@ -5,7 +5,7 @@ import { a } from './a'
 import { Navs } from '../store/navs'
 
 export const nav = (items: Navs) =>
-	html`${component(html`
+	component(html`
 <style>
 	ul {
 		display: flex;
@@ -37,4 +37,4 @@ export const nav = (items: Navs) =>
 	)}
 	</ul>
 </nav>
-`)}`
+`)
