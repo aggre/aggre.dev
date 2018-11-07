@@ -1,3 +1,9 @@
+```yml
+title: aggre.io
+description: aggre.io
+image: /asset/image/og.png
+```
+
 # aggre
 
 こんにちは、あぐりです。

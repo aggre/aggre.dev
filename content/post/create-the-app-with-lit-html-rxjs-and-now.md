@@ -1,6 +1,7 @@
 ```yml
 title: lit-html + RxJS + now でアプリケーションを作る
 description: lit-html + RxJS で FRP な構成のアプリケーションをつくり、now で SSR もしてみた
+image: /asset/image/og.png
 ```
 
 # lit-html + RxJS + now でアプリケーションを作る
