@@ -10,9 +10,9 @@ const getHTML = browser => async pathname => {
 	console.info('render start', pathname)
 	const page = await browser.newPage()
 	await page.goto(`http://localhost:${port}${pathname}`, {
-		waitUntil: 'networkidle0'
+		waitUntil: 'domcontentloaded'
 	})
-	await page.waitForSelector('x-app > *').catch(err => console.warn(err))
+	await page.waitForSelector('x-app > *')
 	const html = await page.content()
 	await page.close()
 	console.info('render end', pathname)
