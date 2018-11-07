@@ -3,7 +3,6 @@
 	"private": true,
 	"version": "1.0.0",
 	"description": "Website for aggre",
-	"main": "index.js",
 	"scripts": {
 		"start": "serve dist",
 		"write": "cpx 'content/**' dist",
