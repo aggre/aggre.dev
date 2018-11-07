@@ -35,7 +35,7 @@ render(helloTemplate('Kevin'), document.body)
 
 ちなみに以前こういう記事を書いた。
 
-[lit-htmlとバニラWeb Componentsでコンポーネントを実装する](https://qiita.com/aggre/items/3ed2558a9fb8ba887385)
+[lit-html とバニラ Web Components でコンポーネントを実装する](https://qiita.com/aggre/items/3ed2558a9fb8ba887385)
 
 この記事では Custom Elements のテンプレートとして lit-html を採用している。この方法論は、今では個人的には推奨したくない。Custom Elements の境界を超えると、型の恩恵が受けられないためだ。
 
@@ -89,6 +89,7 @@ export const root = directive(part => {
 	})
 })
 ```
+
 https://github.com/aggre/aggre.io/blob/master/src/component/root.ts
 
 ここでは、[ullr](https://github.com/aggre/ullr) の API ではなく lit-html の directive を素で使っている。ullr は unsubscribe できることを前提にしているため少し複雑な実装をしており、ルートテンプレートのような、基本的に購読し続ける箇所ではもっとシンプルな実装にしたかった。それともう一つ、ullr を使うと `ullr-sbsc` という要素をテンプレートに挿入する。これがルートには不適切だと思った。
@@ -101,6 +102,7 @@ import { app } from '../component/app'
 
 export const xApp = customElements(() => app())
 ```
+
 https://github.com/aggre/aggre.io/blob/master/src/element/x-app.ts
 
 `app` というのがアプリケーションの本体になる。アプリケーションの中身はこんな感じ。
@@ -138,6 +140,7 @@ export const app = () => html`
 </div>
 `
 ```
+
 https://github.com/aggre/aggre.io/blob/master/src/component/app.ts
 
 Custom Elements 内の Shadow DOM でカプセル化されるため、`style` 要素はそのまま記述する。あとは、`<slot></slot>` に `x-app` の子要素が入ってくる。もちろん標準仕様としての `slot` なので、実装はランタイムに委ねている。
@@ -182,6 +185,7 @@ export const header = () =>
 </header>
 `)
 ```
+
 https://github.com/aggre/aggre.io/blob/master/src/component/header.ts
 
 このアプリケーションもといホームページはシンプルなので、大体こんな感じだ。
@@ -260,6 +264,7 @@ module.exports = async (req, res) => {
 	return format(html)
 }
 ```
+
 https://github.com/aggre/aggre.io/blob/master/index.js
 
 サーバのコードは書きたくなかったので、このコードは TypeScript を使っていない。書かないでも済む環境ができたらすぐにも消したいと思っている。
