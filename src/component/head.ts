@@ -6,6 +6,13 @@ export const head = (
 	meta?: ContentMeta,
 	domain = 'aggre.io'
 ) => html`
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-5710337-14"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-5710337-14');
+	</script>
 	<meta charset=UTF-8>
 	<meta name=viewport content='width=device-width, initial-scale=1, shrink-to-fit=no'>
 	<meta http-equiv=X-UA-Compatible content='ie=edge'>
@@ -27,7 +34,6 @@ export const head = (
 	<meta name=twitter:card content=summary>
 	<meta name=twitter:site content=//twitter.com/aggre_>
 	<title>${meta ? meta.title : ''}</title>
-	<script async custom-element=amp-analytics src=//cdn.ampproject.org/v0/amp-analytics-0.1.js></script>
 	<style>
 		@import '../../node_modules/highlight.js/styles/atom-one-dark.css';
 		body {
