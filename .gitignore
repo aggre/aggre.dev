@@ -66,6 +66,3 @@ dist
 
 # tsc build output
 src/**/*.js
-
-# pre-rendered
-.rendered
