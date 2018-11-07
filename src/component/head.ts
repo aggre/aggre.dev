@@ -40,6 +40,9 @@ export const head = (
 				padding: 2rem;
 			}
 		}
+		a {
+			color: blue;
+		}
 		.hljs {
 			background: black;
 			border-radius: 1rem;
