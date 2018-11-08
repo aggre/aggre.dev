@@ -26,8 +26,8 @@ export const head = (
 	<meta property=og:title content='${meta.title}'>
 	<meta name=description content='${meta.description}'>
 	<meta property=og:description content='${meta.description}'>
-	<meta property=og:image content='${meta.image}'>
-	<meta name=twitter:image content='${meta.image}'>
+	<meta property=og:image content='//${domain}${meta.image}'>
+	<meta name=twitter:image content='//${domain}${meta.image}'>
 `
 			: ''
 	}
