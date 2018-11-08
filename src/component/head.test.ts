@@ -48,11 +48,11 @@ describe('<head>', () => {
 			(el.querySelector('meta[property="og:image"]') as Element).getAttribute(
 				'content'
 			)
-		).to.be('/test.jpg')
+		).to.be('//aggre.io/test.jpg')
 		expect(
 			(el.querySelector('meta[name="twitter:image"]') as Element).getAttribute(
 				'content'
 			)
-		).to.be('/test.jpg')
+		).to.be('//aggre.io/test.jpg')
 	})
 })
