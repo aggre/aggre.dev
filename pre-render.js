@@ -14,13 +14,18 @@ const getHTML = browser => async pathname => {
 	})
 	await page.waitForSelector('x-app > *')
 	const html = await page.content()
-	await page.close()
 	console.info('render end', pathname)
 	return html
 }
 ;(async () => {
 	const serve = await micro((req, res) =>
-		handler(req, res, { public: 'dist' })
+		handler(req, res, {
+			public: 'dist',
+			rewrites: [
+				{ source: 'post/**', destination: '/index.html' },
+				{ source: 'page/**', destination: '/index.html' }
+			]
+		})
 	).listen(port)
 	const pages = await listFiles('content').then(fls =>
 		fls
