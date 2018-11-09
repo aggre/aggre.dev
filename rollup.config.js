@@ -8,6 +8,7 @@ export default {
 	plugins: [
 		typescript(),
 		postcss({
+			exclude: ['./src/lib/style.ts'],
 			plugins: [postcssImport, postcssPresetEnv({ stage: 0 })]
 		})
 	],
