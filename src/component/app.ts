@@ -1,8 +1,9 @@
 import { html } from 'lit-html'
 import { header } from './header'
+import { style } from '../lib/style'
 
 export const app = () => html`
-<style>
+${style`
 	.app {
 		margin: auto;
 		max-width: 980px;
@@ -22,7 +23,7 @@ export const app = () => html`
 	::slotted(*) {
 		width: 100%;
 	}
-</style>
+`}
 <div class=app>
 	<div class=header>
 		${header()}
