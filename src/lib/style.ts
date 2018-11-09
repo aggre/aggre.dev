@@ -15,6 +15,7 @@ const union = (strings: TemplateStringsArray, values: StyleValues) =>
 			`${result}${current}${values[i] ? `${values[i]}` : ''}`,
 		''
 	)
+const styleElement = (css: string) => `<style>${css}</style>`
 
 export const style = async (
 	strings: TemplateStringsArray,
@@ -25,8 +26,9 @@ export const style = async (
 		? cache.get(key)
 		: (processed => {
 				const { css } = processed
+				const styleTemplate = styleElement(css)
 				// tslint:disable-next-line:no-expression-statement
-				cache.set(key, css)
-				return css
+				cache.set(key, styleTemplate)
+				return styleTemplate
 		  })(await transform(union(strings, values)))
 }
