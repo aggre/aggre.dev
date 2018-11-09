@@ -1,5 +1,6 @@
 import { ContentMeta } from '../store/content'
 import { html } from 'lit-html'
+import { style } from '../lib/style'
 
 export const head = (
 	route: string,
@@ -34,7 +35,7 @@ export const head = (
 	<meta name=twitter:card content=summary>
 	<meta name=twitter:site content=//twitter.com/aggre_>
 	<title>${meta ? meta.title : ''}</title>
-	<style>
+	${style`
 		@import '../../node_modules/highlight.js/styles/atom-one-dark.css';
 		body {
 			margin: 0;
@@ -56,5 +57,5 @@ export const head = (
 			padding: 1rem;
 			box-sizing: border-box;
 		}
-	</style>
+	`}
 `

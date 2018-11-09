@@ -3,10 +3,11 @@ import { repeat } from 'lit-html/directives/repeat'
 import { component } from 'ullr'
 import { a } from './a'
 import { Navs } from '../store/navs'
+import { style } from '../lib/style'
 
 export const nav = (items: Navs) =>
 	component(html`
-<style>
+${style`
 	ul {
 		display: flex;
 		list-style: none;
@@ -15,7 +16,7 @@ export const nav = (items: Navs) =>
 	}
 	a {
 		padding: 0.2rem 1rem;
-    	display: inline-block;
+		display: inline-block;
 		color: inherit;
 		text-decoration: none;
 	}
@@ -24,7 +25,7 @@ export const nav = (items: Navs) =>
 		color: white;
 		border-radius: 99px;
 	}
-</style>
+`}
 <nav>
 	<ul>
 	${repeat(

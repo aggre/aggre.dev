@@ -3,10 +3,11 @@ import { nav } from './nav'
 import { navs } from '../store/navs'
 import { subscribe, component } from 'ullr/directive'
 import { a } from './a'
+import { style } from '../lib/style'
 
 export const header = () =>
 	component(html`
-<style>
+${style`
 	header {
 		display: grid;
 		grid-template-areas: 'brand nav';
@@ -24,7 +25,7 @@ export const header = () =>
 	.nav {
 		grid-area: nav;
 	}
-</style>
+`}
 <header>
 	<div class=brand>
 		${a({ href: '/', content: 'aggre.io' })}
