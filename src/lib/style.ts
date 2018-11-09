@@ -1,12 +1,12 @@
 // tslint:disable:readonly-array
 import postcss from 'postcss'
 import postcssPresetEnv from 'postcss-preset-env'
-import postcssImport from 'postcss-import'
+import { html, TemplateResult } from 'lit-html'
 
 type StyleValues = string[]
 
-const cache = new WeakMap<[TemplateStringsArray, StyleValues], string>()
-const plugins: any[] = [postcssImport, postcssPresetEnv({ stage: 0 })]
+const cache = new WeakMap<[TemplateStringsArray, StyleValues], TemplateResult>()
+const plugins: any[] = [postcssPresetEnv({ stage: 0 })]
 const transform = async (css: string) =>
 	postcss(plugins).process(css, { from: `${Math.random()}` })
 const union = (strings: TemplateStringsArray, values: StyleValues) =>
@@ -15,7 +15,7 @@ const union = (strings: TemplateStringsArray, values: StyleValues) =>
 			`${result}${current}${values[i] ? `${values[i]}` : ''}`,
 		''
 	)
-const styleElement = (css: string) => `<style>${css}</style>`
+const styleElement = (css: string) => html`<style>${css}</style>`
 
 export const style = async (
 	strings: TemplateStringsArray,
