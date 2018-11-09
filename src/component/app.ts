@@ -20,9 +20,6 @@ ${style`
 	main {
 		grid-area: main;
 	}
-	::slotted(*) {
-		width: 100%;
-	}
 `}
 <div class=app>
 	<div class=header>
