@@ -11,4 +11,9 @@ customElements.define('x-app', xApp)
 
 base(route, content)
 
-render(html`${root}`, document.getElementById('root') || document.body)
+render(
+	html`
+		${root}
+	`,
+	document.getElementById('root') || document.body
+)

@@ -50,7 +50,7 @@ describe('base manager', () => {
 		const exSubscriptions = new Set([
 			content.pipe(skip(1)).subscribe(x => {
 				expect(prevContent).to.not.be(x)
-				expect(x!.meta!.title).to.be('🍣')
+				expect(x.meta!.title).to.be('🍣')
 				cancel(subscriptions)
 			})
 		])

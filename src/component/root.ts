@@ -5,7 +5,11 @@ import { markedHTML } from '../lib/marked-html'
 
 export const root = directive(part => {
 	content.subscribe(x => {
-		part.setValue(html`<x-app>${markedHTML(x ? x.body : '')}</x-app>`)
+		part.setValue(
+			html`
+				<x-app>${markedHTML(x ? x.body : '')}</x-app>
+			`
+		)
 		part.commit()
 	})
 })
