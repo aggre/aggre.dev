@@ -10,7 +10,7 @@ describe('root', () => {
 		})
 		render(
 			html`
-				${root}
+				${root()}
 			`,
 			document.body
 		)

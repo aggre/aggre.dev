@@ -37,7 +37,7 @@
 		"serve": "^10.1.1",
 		"serve-handler": "^5.0.7",
 		"typescript": "^3.1.6",
-		"ullr": "^0.9.8"
+		"ullr": "^0.10.1"
 	},
 	"devDependencies": {
 		"@types/expect.js": "^0.3.29",

@@ -13,7 +13,7 @@ base(route, content)
 
 render(
 	html`
-		${root}
+		${root()}
 	`,
 	document.getElementById('root') || document.body
 )
