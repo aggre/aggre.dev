@@ -7,7 +7,7 @@ export const root = directive(() => (part: Part) => {
 	content.subscribe(x => {
 		part.setValue(
 			html`
-				<x-app>${markedHTML(x ? x.body : '')}</x-app>
+				${markedHTML(x ? x.body : '')}
 			`
 		)
 		part.commit()

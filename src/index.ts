@@ -5,8 +5,10 @@ import { content } from './store/content'
 import { route } from './store/route'
 import { base } from './manager/base'
 import { root } from './component/root'
+import { skip, take } from 'rxjs/operators'
 const { customElements } = window
 const APP = 'x-app'
+const RENDERED = Boolean(document.querySelector(`${APP} > *`))
 
 customElements.define(APP, xApp)
 customElements
@@ -15,9 +17,16 @@ customElements
 
 base(route, content)
 
-render(
-	html`
-		${root()}
-	`,
-	document.getElementById('root') || document.body
-)
+content
+	.pipe(
+		skip(RENDERED ? 2 : 0),
+		take(1)
+	)
+	.subscribe(() => {
+		render(
+			html`
+				${root()}
+			`,
+			document.querySelector('x-app') || document.body
+		)
+	})
