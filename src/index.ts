@@ -6,8 +6,12 @@ import { route } from './store/route'
 import { base } from './manager/base'
 import { root } from './component/root'
 const { customElements } = window
+const APP = 'x-app'
 
-customElements.define('x-app', xApp)
+customElements.define(APP, xApp)
+customElements
+	.whenDefined(APP)
+	.then(() => (document.querySelector(APP) as Element).classList.add('show'))
 
 base(route, content)
 

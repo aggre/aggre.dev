@@ -57,6 +57,13 @@ export const head = (
 		a {
 			color: blue;
 		}
+		x-app {
+			display: none;
+			&.show {
+				display: block;
+			}
+		}
+
 		.hljs {
 			background: black;
 			border-radius: 1rem;
