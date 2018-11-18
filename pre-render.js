@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer')
 const { listFiles } = require('list-files-in-dir')
 const serveConfig = require('./serve.json')
 const port = 5000
-const format = h => (typeof h === 'string' ? h.replace(/<\!---->/g, '') : h)
+const format = h => (typeof h === 'string' ? h.replace(/<\!---->|\s+?class="show"/g, '') : h)
 const write = async (path, content) => writeFile.promise(path, content)
 const getHTML = browser => async pathname => {
 	console.info('render start', pathname)
