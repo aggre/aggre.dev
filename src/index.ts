@@ -27,6 +27,6 @@ content
 			html`
 				${root()}
 			`,
-			document.querySelector('x-app') || document.body
+			document.querySelector(APP) || document.body
 		)
 	})
