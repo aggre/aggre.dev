@@ -4,7 +4,7 @@
 	"version": "1.0.0",
 	"description": "Website for aggre",
 	"scripts": {
-		"start": "serve dist",
+		"start": "serve",
 		"write": "cpx 'content/**' dist",
 		"writing": "cpx 'content/**' dist --watch",
 		"build": "rollup -c && npm run write && parcel build src/index.html && npm run render",
