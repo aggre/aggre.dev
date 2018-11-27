@@ -2,9 +2,7 @@ import { ContentMeta } from '../store/content'
 import { html } from 'lit-html'
 import { style } from '../lib/style'
 
-const highlight = (document.head as HTMLHeadElement).querySelector(
-	'style[id=highlight]'
-)
+const highlight = (document.head as HTMLHeadElement).querySelector('#highlight')
 
 export const head = (
 	route: string,
