@@ -26,7 +26,6 @@
 	},
 	"homepage": "https://github.com/aggre/aggre.io#readme",
 	"dependencies": {
-		"@types/node": "^10.12.7",
 		"highlight.js": "^9.13.1",
 		"js-yaml": "^3.12.0",
 		"lit-html": "^0.13.0",
@@ -38,7 +37,6 @@
 		"rxjs": "^6.3.3",
 		"serve": "^10.1.1",
 		"serve-handler": "^5.0.7",
-		"typescript": "^3.1.6",
 		"ullr": "^0.10.1"
 	},
 	"devDependencies": {
@@ -47,6 +45,7 @@
 		"@types/js-yaml": "^3.11.2",
 		"@types/markdown-it": "0.0.7",
 		"@types/mocha": "^5.2.5",
+		"@types/node": "^10.12.10",
 		"babel-core": "^6.26.3",
 		"babel-preset-env": "^1.7.0",
 		"cpx": "^1.5.0",
@@ -70,6 +69,7 @@
 		"tslint-immutable": "^5.0.0",
 		"tslint-plugin-prettier": "^2.0.1",
 		"tslint-xo": "^0.10.0",
+		"typescript": "^3.1.6",
 		"typescript-lit-html-plugin": "^0.9.0",
 		"write": "^1.0.3"
 	}
