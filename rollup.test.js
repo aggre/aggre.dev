@@ -9,6 +9,6 @@ export default {
 	],
 	output: {
 		file: './src/test.js',
-		format: 'iife'
+		format: 'esm'
 	}
 }
