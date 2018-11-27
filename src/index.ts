@@ -14,6 +14,7 @@ customElements.define(APP, xApp)
 customElements
 	.whenDefined(APP)
 	.then(() => (document.querySelector(APP) as Element).classList.add('show'))
+	.catch(err => console.warn(err))
 
 base(route, content)
 

@@ -7,7 +7,8 @@ import { style } from '../lib/style'
 
 export const header = () =>
 	component(html`
-${style`
+		${
+			style`
 	header {
 		display: grid;
 		grid-template-areas: 'brand nav';
@@ -25,13 +26,10 @@ ${style`
 	.nav {
 		grid-area: nav;
 	}
-`}
-<header>
-	<div class=brand>
-		${a({ href: '/', content: 'aggre.io' })}
-	</div>
-	<div class=nav>
-		${subscribe(navs, x => nav(x))}
-	</div>
-</header>
-`)
+`
+		}
+		<header>
+			<div class="brand">${a({ href: '/', content: 'aggre.io' })}</div>
+			<div class="nav">${subscribe(navs, x => nav(x))}</div>
+		</header>
+	`)

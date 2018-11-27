@@ -3,7 +3,8 @@ import { header } from './header'
 import { style } from '../lib/style'
 
 export const app = () => html`
-${style`
+	${
+		style`
 	.app {
 		margin: auto;
 		max-width: 980px;
@@ -23,12 +24,12 @@ ${style`
 	::slotted(*) {
 		width: 100%;
 	}
-`}
-<div class=app>
-	<div class=header>
-		${header()}
-	<main>
-		<slot></slot>
-	</main>
-</div>
+`
+	}
+	<div class="app">
+		<div class="header">
+			${header()}
+			<main><slot></slot></main>
+		</div>
+	</div>
 `

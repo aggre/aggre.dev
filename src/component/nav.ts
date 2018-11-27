@@ -7,7 +7,8 @@ import { style } from '../lib/style'
 
 export const nav = (items: Navs) =>
 	component(html`
-${style`
+		${
+			style`
 	ul {
 		display: flex;
 		list-style: none;
@@ -25,17 +26,26 @@ ${style`
 		color: white;
 		border-radius: 99px;
 	}
-`}
-<nav>
-	<ul>
-	${repeat(
-		items,
-		item =>
-			html`<li class='${item.active ? 'active' : ''}'>${a({
-				href: item.link,
-				content: item.label
-			})}</li>`
-	)}
-	</ul>
-</nav>
-`)
+`
+		}
+		<nav>
+			<ul>
+				${
+					repeat(
+						items,
+						item =>
+							html`
+								<li class="${item.active ? 'active' : ''}">
+									${
+										a({
+											href: item.link,
+											content: item.label
+										})
+									}
+								</li>
+							`
+					)
+				}
+			</ul>
+		</nav>
+	`)

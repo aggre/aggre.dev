@@ -38,11 +38,9 @@ export const head = (
 					<meta name="twitter:image" content="//${domain}${meta.image}" />
 			  `
 			: ''
-	}
-	<meta name=twitter:card content=summary>
-	<meta name=twitter:site content=//twitter.com/aggre_>
-	<title>${meta ? meta.title : ''}</title>
-	${style`
+	} <meta name="twitter:card" content="summary" /> <meta name=twitter:site
+	content=//twitter.com/aggre_ /> <title>${meta ? meta.title : ''}</title> ${
+		style`
 		@import '../../node_modules/highlight.js/styles/atom-one-dark.css';
 		body {
 			margin: 0;
@@ -73,5 +71,6 @@ export const head = (
 			padding: 1rem;
 			box-sizing: border-box;
 		}
-	`}
+	`
+	}
 `
