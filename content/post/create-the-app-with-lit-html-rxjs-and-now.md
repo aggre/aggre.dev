@@ -29,7 +29,10 @@ What's [lit-html](https://github.com/Polymer/lit-html)、は省略する。
 ```ts
 import { html, render } from 'lit-html'
 
-const helloTemplate = (name: string) => html`<div>Hello ${name}!</div>`
+const helloTemplate = (name: string) =>
+	html`
+		<div>Hello ${name}!</div>
+	`
 
 render(helloTemplate('Kevin'), document.body)
 ```
@@ -79,7 +82,12 @@ lit-html によるテンプレートは、`render()` を実行する度に差分
 こんなふうに。
 
 ```ts
-render(html`${root}`, document.getElementById('root'))
+render(
+	html`
+		${root}
+	`,
+	document.getElementById('root')
+)
 ```
 
 ソースでいうと https://github.com/aggre/aggre.io/blob/master/src/index.ts にあたる。
@@ -93,7 +101,11 @@ import { markedHTML } from '../lib/marked-html'
 
 export const root = directive(part => {
 	content.subscribe(x => {
-		part.setValue(html`<x-app>${markedHTML(x ? x.body : '')}</x-app>`)
+		part.setValue(
+			html`
+				<x-app>${markedHTML(x ? x.body : '')}</x-app>
+			`
+		)
 		part.commit()
 	})
 })
@@ -121,32 +133,28 @@ import { html } from 'lit-html'
 import { header } from './header'
 
 export const app = () => html`
-<style>
-	.app {
-		margin: auto;
-		max-width: 980px;
-		display: grid;
-		grid-template-areas:
-			'header'
-			'main';
-		grid-gap: 3rem;
-		grid-template-columns: 100%;
-	}
-	.header {
-		grid-area: header
-	}
-	main {
-		grid-area: main;
-	}
-</style>
-<div class=app>
-	<div class=header>
-		${header()}
+	<style>
+		.app {
+			margin: auto;
+			max-width: 980px;
+			display: grid;
+			grid-template-areas:
+				'header'
+				'main';
+			grid-gap: 3rem;
+			grid-template-columns: 100%;
+		}
+		.header {
+			grid-area: header;
+		}
+		main {
+			grid-area: main;
+		}
+	</style>
+	<div class="app">
+		<div class="header">${header()}</div>
+		<main><slot></slot></main>
 	</div>
-	<main>
-		<slot></slot>
-	</main>
-</div>
 `
 ```
 
@@ -165,34 +173,30 @@ import { a } from './a'
 
 export const header = () =>
 	component(html`
-<style>
-	header {
-		display: grid;
-		grid-template-areas: 'brand nav';
-		grid-template-columns: 1fr auto;
-		align-items: center;
-	}
-	.brand {
-		grid-area: brand;
-		& a {
-			color: blue;
-			text-decoration: none;
-			font-weight: 700;
-		}
-	}
-	.nav {
-		grid-area: nav;
-	}
-</style>
-<header>
-	<div class=brand>
-		${a({ href: '/', content: 'aggre.io' })}
-	</div>
-	<div class=nav>
-		${subscribe(navs, x => nav(x))}
-	</div>
-</header>
-`)
+		<style>
+			header {
+				display: grid;
+				grid-template-areas: 'brand nav';
+				grid-template-columns: 1fr auto;
+				align-items: center;
+			}
+			.brand {
+				grid-area: brand;
+				& a {
+					color: blue;
+					text-decoration: none;
+					font-weight: 700;
+				}
+			}
+			.nav {
+				grid-area: nav;
+			}
+		</style>
+		<header>
+			<div class="brand">${a({ href: '/', content: 'aggre.io' })}</div>
+			<div class="nav">${subscribe(navs, x => nav(x))}</div>
+		</header>
+	`)
 ```
 
 https://github.com/aggre/aggre.io/blob/master/src/component/header.ts

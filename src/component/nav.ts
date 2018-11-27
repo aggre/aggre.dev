@@ -1,6 +1,6 @@
 import { html } from 'lit-html'
 import { repeat } from 'lit-html/directives/repeat'
-import { component } from 'ullr'
+import { component } from 'ullr/directive'
 import { a } from './a'
 import { Navs } from '../store/navs'
 import { style } from '../lib/style'

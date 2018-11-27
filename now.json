@@ -1,8 +1,6 @@
 {
+	"version": 2,
 	"alias": "aggre.io",
-	"type": "static",
-	"static": {
-		"public": "dist"
-	},
-	"files": ["dist"]
+	"builds": [{ "src": "dist/**", "use": "@now/static" }],
+	"routes": [{ "src": "/(.*)", "dest": "/dist/$1" }]
 }

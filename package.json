@@ -4,7 +4,7 @@
 	"version": "1.0.0",
 	"description": "Website for aggre",
 	"scripts": {
-		"start": "serve dist",
+		"start": "serve",
 		"write": "cpx 'content/**' dist",
 		"writing": "cpx 'content/**' dist --watch",
 		"build": "rollup -c && npm run write && parcel build src/index.html && npm run render",
@@ -27,19 +27,19 @@
 	},
 	"homepage": "https://github.com/aggre/aggre.io#readme",
 	"dependencies": {
-		"@types/node": "^10.12.0",
+		"@types/node": "^10.12.7",
 		"highlight.js": "^9.13.1",
 		"js-yaml": "^3.12.0",
-		"lit-html": "^0.12.0",
 		"lit-style": "^0.1.1",
+		"lit-html": "^0.13.0",
 		"markdown-it": "^8.4.2",
 		"micro": "^9.3.3",
 		"postcss-preset-env": "^6.4.0",
 		"rxjs": "^6.3.3",
-		"serve": "^10.0.2",
-		"serve-handler": "^5.0.5",
-		"typescript": "^3.1.3",
-		"ullr": "^0.9.8"
+		"serve": "^10.1.1",
+		"serve-handler": "^5.0.7",
+		"typescript": "^3.1.6",
+		"ullr": "^0.10.1"
 	},
 	"devDependencies": {
 		"@types/expect.js": "^0.3.29",
@@ -60,16 +60,16 @@
 		"parcel": "^1.10.3",
 		"prettier": "^1.14.3",
 		"puppeteer": "^1.10.0",
-		"rollup": "^0.66.6",
+		"rollup": "^0.67.1",
 		"rollup-plugin-multi-entry": "^2.0.2",
 		"rollup-plugin-typescript": "^1.0.0",
 		"tslib": "^1.9.3",
 		"tslint": "^5.11.0",
-		"tslint-config-prettier": "^1.15.0",
-		"tslint-immutable": "^4.8.0",
-		"tslint-plugin-prettier": "^2.0.0",
-		"tslint-xo": "^0.9.0",
-		"typescript-lit-html-plugin": "^0.6.0",
+		"tslint-config-prettier": "^1.16.0",
+		"tslint-immutable": "^5.0.0",
+		"tslint-plugin-prettier": "^2.0.1",
+		"tslint-xo": "^0.10.0",
+		"typescript-lit-html-plugin": "^0.9.0",
 		"write": "^1.0.3"
 	}
 }

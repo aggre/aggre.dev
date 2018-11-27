@@ -27,7 +27,6 @@ ${style`
 <div class=app>
 	<div class=header>
 		${header()}
-	</div>
 	<main>
 		<slot></slot>
 	</main>

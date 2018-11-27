@@ -8,17 +8,21 @@ describe('root', () => {
 		content.next({
 			body: 'Test'
 		})
-		render(html`${root}`, document.body)
-		const el = document.body.querySelector('x-app') as HTMLElement
-		expect((el.querySelector('p') as HTMLParagraphElement).innerText).to.be(
-			'Test'
+		render(
+			html`
+				${root()}
+			`,
+			document.body
 		)
+		expect(
+			(document.body.querySelector('p') as HTMLParagraphElement).innerText
+		).to.be('Test')
 
 		content.next({
 			body: 'Test 2'
 		})
-		expect((el.querySelector('p') as HTMLParagraphElement).innerText).to.be(
-			'Test 2'
-		)
+		expect(
+			(document.body.querySelector('p') as HTMLParagraphElement).innerText
+		).to.be('Test 2')
 	})
 })

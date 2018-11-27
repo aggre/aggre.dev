@@ -3,8 +3,10 @@ const micro = require('micro')
 const handler = require('serve-handler')
 const puppeteer = require('puppeteer')
 const { listFiles } = require('list-files-in-dir')
+const serveConfig = require('./serve.json')
 const port = 5000
-const format = h => (typeof h === 'string' ? h.replace(/<\!---->/g, '') : h)
+const format = h =>
+	typeof h === 'string' ? h.replace(/<\!---->|\s+?class="show"/g, '') : h
 const write = async (path, content) => writeFile.promise(path, content)
 const getHTML = browser => async pathname => {
 	console.info('render start', pathname)
@@ -19,18 +21,14 @@ const getHTML = browser => async pathname => {
 }
 ;(async () => {
 	const serve = await micro((req, res) =>
-		handler(req, res, {
-			public: 'dist',
-			rewrites: [
-				{ source: 'post/**', destination: '/index.html' },
-				{ source: 'page/**', destination: '/index.html' }
-			]
-		})
+		handler(req, res, serveConfig)
 	).listen(port)
 	const pages = await listFiles('content').then(fls =>
 		fls
 			.filter(f => f.endsWith('.md'))
-			.map(f => f.replace(`${__dirname}/content`, '').replace('.md', ''))
+			.map(f =>
+				f.replace(`${__dirname}/content`, '').replace(/(\.md|index)/g, '')
+			)
 	)
 	const browser = await puppeteer.launch({
 		headless: true,
@@ -40,7 +38,7 @@ const getHTML = browser => async pathname => {
 	const htmls = await Promise.all(pages.map(page => ssr(page)))
 	await browser.close()
 	await Promise.all(
-		pages.map((page, i) => write(`dist${page}.html`, format(htmls[i])))
+		pages.map((page, i) => write(`dist${page}/index.html`, format(htmls[i])))
 	)
 	serve.close()
 	console.log('completed!!!')

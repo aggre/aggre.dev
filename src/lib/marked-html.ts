@@ -16,4 +16,7 @@ const parse = markdownIt({
 	}
 })
 
-export const markedHTML = (md = '') => html`${unsafeHTML(parse.render(md))}`
+export const markedHTML = (md = '') =>
+	html`
+		${unsafeHTML(parse.render(md))}
+	`
