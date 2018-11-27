@@ -7,14 +7,13 @@
 		"start": "serve",
 		"write": "cpx 'content/**' dist",
 		"writing": "cpx 'content/**' dist --watch",
-		"build": "rollup -c && npm run write && parcel build src/index.html && npm run render",
+		"build": "npm run write && parcel build src/index.html && npm run render",
 		"render": "node pre-render.js",
 		"test": "karma start",
 		"pretest": "rollup -c rollup.test.js && parcel build src/test.js",
 		"lint": "tslint --fix -p ./",
 		"format": "prettier --write '**/*.{json,md,js,yml,*rc}'",
-		"dev:html": "parcel watch src/index.html",
-		"dev:ts": "rollup -c --watch"
+		"dev": "parcel watch src/index.html"
 	},
 	"repository": {
 		"type": "git",
@@ -59,6 +58,7 @@
 		"list-files-in-dir": "^0.1.5",
 		"mocha": "^5.2.0",
 		"parcel": "^1.10.3",
+		"postcss-import": "^12.0.1",
 		"prettier": "^1.14.3",
 		"puppeteer": "^1.10.0",
 		"rollup": "^0.67.1",

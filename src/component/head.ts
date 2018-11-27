@@ -2,6 +2,10 @@ import { ContentMeta } from '../store/content'
 import { html } from 'lit-html'
 import { style } from '../lib/style'
 
+const highlight = (document.head as HTMLHeadElement).querySelector(
+	'style[id=highlight]'
+)
+
 export const head = (
 	route: string,
 	meta?: ContentMeta,
@@ -38,10 +42,11 @@ export const head = (
 					<meta name="twitter:image" content="//${domain}${meta.image}" />
 			  `
 			: ''
-	} <meta name="twitter:card" content="summary" /> <meta name=twitter:site
-	content=//twitter.com/aggre_ /> <title>${meta ? meta.title : ''}</title> ${
+	} <meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="//twitter.com/aggre_" />
+	<title>${meta ? meta.title : ''}</title> ${highlight}
+	${
 		style`
-		@import '../../node_modules/highlight.js/styles/atom-one-dark.css';
 		body {
 			margin: 0;
 			font-size: 1.1rem;
