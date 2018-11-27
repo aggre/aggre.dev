@@ -21,9 +21,6 @@ export const app = () => html`
 	main {
 		grid-area: main;
 	}
-	::slotted(*) {
-		width: 100%;
-	}
 `
 	}
 	<div class="app">
