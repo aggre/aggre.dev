@@ -4,7 +4,7 @@ description: Web Components を SSR( Server Side Rendering ) する方法
 image: /asset/image/web-components-ssr.png
 ```
 
-この記事は [Web Components Advent Calendar 2018](https://qiita.com/advent-calendar/2018/web-components) の1日目の投稿です。
+この記事は [Web Components Advent Calendar 2018](https://qiita.com/advent-calendar/2018/web-components) の 1 日目の投稿です。
 
 # Web Components を SSR する方法
 
@@ -24,7 +24,7 @@ React とかであれば SSR の基盤が整っているので、アプリケー
 
 Web Components を使ったアプリケーションなら、ほとんどの場合 Shadow DOM も併用しますよね。
 
-でも Shadow DOM は HTML を文字列として取得したときには *隠れて* しまいます。
+でも Shadow DOM は HTML を文字列として取得したときには _隠れて_ しまいます。
 
 SSR のためには HTML を文字列として表現する必要がありますが、文字列にしたとき Shadow DOM の内容が取れないようではそもそも SSR の意味がなくなってしまいます。
 
@@ -47,9 +47,7 @@ Shadow DOM の中で `slot` 要素を使うと、Shadow DOM の親要素( 普通
 ```html
 <x-app>
 	<article>
-		<h1>
-			Today's news
-		</h1>
+		<h1>Today's news</h1>
 		<p>...</p>
 	</article>
 </x-app>
@@ -79,9 +77,9 @@ SSR のターゲットとして Feedly や Pocket のようにスクレイピン
 
 ## SSR したコンテンツを無駄にしない
 
-SSR の結果作られた *初期状態の要素* を削除してしまうことなく活用したいと考えるはずです。
+SSR の結果作られた _初期状態の要素_ を削除してしまうことなく活用したいと考えるはずです。
 
-その方法は簡単で、*Custom Elements の内側に要素が存在している場合には 1 回目のレンダリングをスキップする* ことで対応できます。
+その方法は簡単で、_Custom Elements の内側に要素が存在している場合には 1 回目のレンダリングをスキップする_ ことで対応できます。
 
 スキップする方法はいろいろあると思いますが、以下は、このサイトでのソースの一部です。
 
@@ -111,6 +109,7 @@ content.pipe(skip(RENDERED ? 2 : 0)).subscribe(x => {
 	)
 })
 ```
+
 ( 全体は https://github.com/aggre/aggre.io/blob/master/src/index.ts にて確認できます )
 
 `customElements.define(APP, xApp)` によって Custom Elements が定義されると、Shadow DOM 内部にアプリケーションがレンダリングされます。この処理は必ず実行されます。
@@ -123,7 +122,7 @@ content.pipe(skip(RENDERED ? 2 : 0)).subscribe(x => {
 
 以上、Web Components における SSR の方法についての話でした。
 
-記事のタイトルですが正確には *Web Components を使ったアプリケーションで SSR する方法* になる気がしますが、目標としては Web Components を使ったアプリケーションにおいても SSR によって Bot に有効なドキュメントを返せることのはず。なので、このタイトルにしました。
+記事のタイトルですが正確には _Web Components を使ったアプリケーションで SSR する方法_ になる気がしますが、目標としては Web Components を使ったアプリケーションにおいても SSR によって Bot に有効なドキュメントを返せることのはず。なので、このタイトルにしました。
 
 ほかにも方法論はあると思いますが、`slot` という標準仕様を活用することでプロジェクトをシンプルに保てると思います。
 
@@ -131,4 +130,4 @@ content.pipe(skip(RENDERED ? 2 : 0)).subscribe(x => {
 
 ---
 
-[Web Components Advent Calendar 2018](https://qiita.com/advent-calendar/2018/web-components) 2日目は [hiro](https://twitter.com/hirodeath) さんです！
+[Web Components Advent Calendar 2018](https://qiita.com/advent-calendar/2018/web-components) 2 日目は [hiro](https://twitter.com/hirodeath) さんです！
