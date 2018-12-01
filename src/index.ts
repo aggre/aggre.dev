@@ -4,8 +4,8 @@ import { xApp } from './element/x-app'
 import { content } from './store/content'
 import { route } from './store/route'
 import { base } from './manager/base'
-import { root } from './component/root'
-import { skip, take } from 'rxjs/operators'
+import { skip } from 'rxjs/operators'
+import { markedHTML } from './lib/marked-html'
 const { customElements } = window
 const APP = 'x-app'
 const RENDERED = Boolean(document.querySelector(`${APP} > *`))
@@ -18,16 +18,11 @@ customElements
 
 base(route, content)
 
-content
-	.pipe(
-		skip(RENDERED ? 2 : 0),
-		take(1)
+content.pipe(skip(RENDERED ? 2 : 0)).subscribe(x => {
+	render(
+		html`
+			${markedHTML(x ? x.body : '')}
+		`,
+		document.querySelector(APP) || document.body
 	)
-	.subscribe(() => {
-		render(
-			html`
-				${root()}
-			`,
-			document.querySelector(APP) || document.body
-		)
-	})
+})

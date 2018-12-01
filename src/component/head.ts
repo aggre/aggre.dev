@@ -74,6 +74,10 @@ export const head = (
 			padding: 1rem;
 			box-sizing: border-box;
 		}
+		img {
+			max-width: 100%;
+			height: auto;
+		}
 	`
 	}
 `
