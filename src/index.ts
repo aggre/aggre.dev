@@ -9,6 +9,7 @@ import { markedHTML } from './lib/marked-html'
 const { customElements } = window
 const APP = 'x-app'
 const RENDERED = Boolean(document.querySelector(`${APP} > *`))
+const ROOT = document.querySelector(APP)
 
 customElements.define(APP, xApp)
 customElements
@@ -23,6 +24,6 @@ content.pipe(skip(RENDERED ? 2 : 0)).subscribe(x => {
 		html`
 			${markedHTML(x ? x.body : '')}
 		`,
-		document.querySelector(APP) || document.body
+		ROOT || document.body
 	)
 })
