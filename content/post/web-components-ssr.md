@@ -89,8 +89,8 @@ SSR の結果作られた *初期状態の要素* を削除してしまうこと
 import { render, html } from 'lit-html'
 import { xApp } from './element/x-app'
 import { content } from './store/content'
-import { root } from './component/root'
-import { skip, take } from 'rxjs/operators'
+import { skip } from 'rxjs/operators'
+import { markedHTML } from './lib/marked-html'
 const { customElements } = window
 const APP = 'x-app'
 const RENDERED = Boolean(document.querySelector(`${APP} > *`))
@@ -101,27 +101,20 @@ customElements
 	.then(() => (document.querySelector(APP) as Element).classList.add('show'))
 	.catch(err => console.warn(err))
 
-content
-	.pipe(
-		skip(RENDERED ? 2 : 0),
-		take(1)
+content.pipe(skip(RENDERED ? 2 : 0)).subscribe(x => {
+	render(
+		html`
+			${markedHTML(x ? x.body : '')}
+		`,
+		document.querySelector(APP) || document.body
 	)
-	.subscribe(() => {
-		render(
-			html`
-				${root()}
-			`,
-			document.querySelector(APP) || document.body
-		)
-	})
+})
 ```
 ( 全体は https://github.com/aggre/aggre.io/blob/master/src/index.ts にて確認できます )
 
 `customElements.define(APP, xApp)` によって Custom Elements が定義されると、Shadow DOM 内部にアプリケーションがレンダリングされます。この処理は必ず実行されます。
 
-`content` という RxJS の BehaviorSubject を購読して `x-app` の内側の要素を書き換えます。この書き換え処理を、`RENDERED` が `true` なら 2 回スキップ、そうでなければスキップせずにレンダリングします。スキップがなぜ 2 回なのかは BehaviorSubject の仕様を配慮しています。1 回レンダリングされたあとはアプリケーション側でリレンダリングが行われるので、`take(1)` で 1 回の処理に限定しています。
-
-もう少しシンプルに記述できるのですがまだリファクタリングしていません...
+`content` という RxJS の BehaviorSubject を購読して `x-app` の内側の要素を書き換えます。この書き換え処理を、`RENDERED` が `true` なら 2 回スキップ、そうでなければスキップせずにレンダリングします。スキップがなぜ 2 回なのかは BehaviorSubject の仕様を配慮しています。
 
 とにかく、SSR 済みであれば 1 回目のレンダリングをスキップできればいいということです。
 
