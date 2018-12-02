@@ -7,7 +7,8 @@ const highlight = (document.head as HTMLHeadElement).querySelector('#highlight')
 export const head = (
 	route: string,
 	meta?: ContentMeta,
-	domain = 'aggre.io'
+	domain = 'aggre.io',
+	protocol = 'https'
 ) => html`
 	<script
 		async
@@ -29,15 +30,21 @@ export const head = (
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<meta property="og:site_name" content="${domain}" />
 	<meta property="og:type" content="${route === '/' ? 'website' : 'article'}" />
-	<meta property="og:url" content="//${domain}${route}" />
-	<link rel="canonical" href="//${domain}${route}" /> ${
+	<meta property="og:url" content="${protocol}://${domain}${route}" />
+	<link rel="canonical" href="${protocol}://${domain}${route}" /> ${
 		meta
 			? html`
 					<meta property="og:title" content="${meta.title}" />
 					<meta name="description" content="${meta.description}" />
 					<meta property="og:description" content="${meta.description}" />
-					<meta property="og:image" content="//${domain}${meta.image}" />
-					<meta name="twitter:image" content="//${domain}${meta.image}" />
+					<meta
+						property="og:image"
+						content="${protocol}://${domain}${meta.image}"
+					/>
+					<meta
+						name="twitter:image"
+						content="${protocol}://${domain}${meta.image}"
+					/>
 			  `
 			: ''
 	} <meta name="twitter:card" content="summary" />
