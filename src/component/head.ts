@@ -47,7 +47,7 @@ export const head = (
 					/>
 			  `
 			: ''
-	} <meta name="twitter:card" content="summary" />
+	} <meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="//twitter.com/aggre_" />
 	<title>${meta ? meta.title : ''}</title> ${highlight}
 	${
