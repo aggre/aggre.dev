@@ -15,12 +15,12 @@ describe('<head>', () => {
 		const el = document.head as HTMLHeadElement
 		expect(
 			(el.querySelector('link[rel=canonical]') as Element).getAttribute('href')
-		).to.be('//aggre.io/test')
+		).to.be('https://aggre.io/test')
 		expect(
 			(el.querySelector('meta[property="og:url"]') as Element).getAttribute(
 				'content'
 			)
-		).to.be('//aggre.io/test')
+		).to.be('https://aggre.io/test')
 		expect(
 			(el.querySelector(
 				'meta[property="og:site_name"]'
@@ -48,11 +48,11 @@ describe('<head>', () => {
 			(el.querySelector('meta[property="og:image"]') as Element).getAttribute(
 				'content'
 			)
-		).to.be('//aggre.io/test.jpg')
+		).to.be('https://aggre.io/test.jpg')
 		expect(
 			(el.querySelector('meta[name="twitter:image"]') as Element).getAttribute(
 				'content'
 			)
-		).to.be('//aggre.io/test.jpg')
+		).to.be('https://aggre.io/test.jpg')
 	})
 })
