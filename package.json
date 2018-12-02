@@ -7,13 +7,13 @@
 		"start": "serve",
 		"write": "cpx 'content/**' dist",
 		"writing": "cpx 'content/**' dist --watch",
-		"build": "npm run write && parcel build src/index.html && npm run render",
+		"build": "npm run write && parcel build src/index.html --no-source-maps && npm run render",
 		"render": "node pre-render.js",
 		"test": "karma start",
 		"pretest": "rollup -c rollup.test.js && parcel build src/test.js",
 		"lint": "tslint --fix -p ./",
 		"format": "prettier --write '**/*.{json,md,js,yml,*rc}'",
-		"dev": "parcel watch src/index.html"
+		"dev": "parcel watch src/index.html --no-source-maps"
 	},
 	"repository": {
 		"type": "git",
