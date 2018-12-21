@@ -51,7 +51,7 @@ export const head = (
 	<meta name="twitter:site" content="//twitter.com/aggre_" />
 	<title>${meta ? meta.title : ''}</title> ${highlight}
 	<link
-		href="https://fonts.googleapis.com/css?family=Lato|Montserrat:400,700|Noto+Sans+JP:400,700"
+		href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700|Noto+Sans+JP:400,700"
 		rel="stylesheet"
 	/>
 	${
