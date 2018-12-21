@@ -50,14 +50,16 @@ export const head = (
 	} <meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="//twitter.com/aggre_" />
 	<title>${meta ? meta.title : ''}</title> ${highlight}
+	<link
+		href="https://fonts.googleapis.com/css?family=Lato|Montserrat:400,700|Noto+Sans+JP:400,700"
+		rel="stylesheet"
+	/>
 	${
 		style`
 		body {
 			margin: 0;
 			font-size: 1.1rem;
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-				'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-				'Helvetica Neue', sans-serif;
+			font-family: Montserrat, 'Noto Sans JP', sans-serif;
 			padding: 1rem;
 			box-sizing: border-box;
 			word-break: break-all;
@@ -80,6 +82,22 @@ export const head = (
 			border-radius: 1rem;
 			padding: 1rem;
 			box-sizing: border-box;
+		}
+		blockquote {
+			position: relative;
+			background: whitesmoke;
+			padding: .2rem 1.4rem;
+			margin: 1rem;
+			&::before {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 2px;
+				left: 0;
+				top: 0;
+				height: 100%;
+				background: #ccc;
+			}
 		}
 		img {
 			max-width: 100%;

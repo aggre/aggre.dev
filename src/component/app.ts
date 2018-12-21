@@ -20,6 +20,21 @@ export const app = () => html`
 		}
 		main {
 			grid-area: main;
+			max-width: 680px;
+			margin: auto;
+		}
+		::slotted {
+			&(p),
+			&(ul) {
+				line-height: 180%;
+				font-family: Lato, 'Noto Sans JP', sans-serif;
+			}
+			&(h2) {
+				margin-top: 3em;
+			}
+			&(h3) {
+				margin-top: 2.4em;
+			}
 		}
 	`
 	}
