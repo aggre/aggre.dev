@@ -83,6 +83,12 @@ export const head = (
 			padding: 1rem;
 			box-sizing: border-box;
 		}
+		p > code {
+			padding: 0.2rem 0.4rem;
+			border-radius: 99px;
+			color: white;
+			background: #4CAF50;
+		}
 		blockquote {
 			position: relative;
 			background: whitesmoke;
@@ -97,6 +103,10 @@ export const head = (
 				top: 0;
 				height: 100%;
 				background: #ccc;
+			}
+			& p > code {
+				color: inherit;
+				background: #e3e3e3;
 			}
 		}
 		img {
