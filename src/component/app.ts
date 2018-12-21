@@ -21,6 +21,7 @@ export const app = () => html`
 		main {
 			grid-area: main;
 			max-width: 680px;
+			width: 100%;
 			margin: auto;
 		}
 		::slotted {
