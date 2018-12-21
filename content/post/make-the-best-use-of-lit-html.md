@@ -6,7 +6,7 @@ image: /asset/image/og.png
 
 この記事は [Web Components Advent Calendar 2018](https://qiita.com/advent-calendar/2018/web-components) の 19 日目の投稿です。
 
-# lit-html
+# lit-html を使い倒す
 
 12 月 14 日に v1.0.0-rc.1 がリリースされ、そろそろ安定版が使えるようになる気配の lit-html について書きたいと思います。愛が強すぎて張り切った割に時間が足りず、結局最後グダってしまいました。ご容赦ください！
 
