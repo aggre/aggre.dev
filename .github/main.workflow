@@ -21,7 +21,7 @@ action "build" {
 }
 
 action "deploy" {
-  uses = "now"
+  uses = "actions/zeit-now@9fe84d5"
   needs = ["build"]
   args = "--public --token $NOW_TOKEN"
   secrets = ["NOW_TOKEN"]
