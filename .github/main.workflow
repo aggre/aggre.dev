@@ -1,6 +1,9 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["alias"]
+  resolves = [
+    "test",
+    "alias"
+  ]
 }
 
 action "install dependencies" {
@@ -14,10 +17,16 @@ action "test" {
   needs = ["install dependencies"]
 }
 
+action "master" {
+  uses = "actions/bin/filter@b2bea07"
+  needs = ["test"]
+  args = "branch master"
+}
+
 action "build" {
   uses = "actions/npm@e7aaefe"
   args = "run build"
-  needs = ["test"]
+  needs = ["master"]
 }
 
 action "deploy" {
@@ -33,3 +42,4 @@ action "alias" {
   args = "alias --token $NOW_TOKEN"
   secrets = ["NOW_TOKEN"]
 }
+
