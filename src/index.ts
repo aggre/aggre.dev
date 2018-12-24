@@ -1,6 +1,7 @@
 // tslint:disable:no-expression-statement
 import { render, html } from 'lit-html'
 import { xApp } from './element/x-app'
+import { XEmbed } from './element/x-embed'
 import { content } from './store/content'
 import { route } from './store/route'
 import { base } from './manager/base'
@@ -12,6 +13,7 @@ const RENDERED = Boolean(document.querySelector(`${APP} > *`))
 const ROOT = document.querySelector(APP)
 
 customElements.define(APP, xApp)
+customElements.define('x-embed', XEmbed)
 customElements
 	.whenDefined(APP)
 	.then(() => (document.querySelector(APP) as Element).classList.add('show'))
