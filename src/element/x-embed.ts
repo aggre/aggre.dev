@@ -16,9 +16,10 @@ export class XEmbed extends HTMLElement {
 		const node = document.importNode(content, true)
 		const nativeScripts = Array.from(node.querySelectorAll('script'))
 		const scripts = nativeScripts.map(s => {
-			const src = s.src
 			const script = document.createElement('script')
-			script.src = src
+			s.getAttributeNames().map(attr => {
+				script.setAttribute(attr, s.getAttribute(attr) as string)
+			})
 			return script
 		})
 		this.appendChild(node)
