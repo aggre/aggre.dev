@@ -5,12 +5,17 @@
 // tslint:disable:no-object-mutation
 // tslint:disable:typedef
 
+const results = 'results-container'
+
 export class XEmbed extends HTMLElement {
 	connectedCallback() {
 		const template = this.querySelector('template')
-		if (!template) {
+		const generated = this.querySelector(`.${results}`)
+		if (!template || generated) {
 			return
 		}
+		const container = document.createElement('div')
+		container.classList.add(results)
 
 		const { content } = template
 		const node = document.importNode(content, true)
@@ -22,14 +27,15 @@ export class XEmbed extends HTMLElement {
 			})
 			return script
 		})
-		this.appendChild(node)
+		container.appendChild(node)
 		nativeScripts.forEach(s => {
 			if (s.parentNode) {
 				s.parentNode.removeChild(s)
 			}
 		})
 		scripts.forEach(s => {
-			this.appendChild(s)
+			container.appendChild(s)
 		})
+		this.appendChild(container)
 	}
 }
