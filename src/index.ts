@@ -9,11 +9,12 @@ import { skip } from 'rxjs/operators'
 import { markedHTML } from './lib/marked-html'
 const { customElements } = window
 const APP = 'x-app'
+const EMBED = 'x-embed'
 const RENDERED = Boolean(document.querySelector(`${APP} > *`))
 const ROOT = document.querySelector(APP)
 
 customElements.define(APP, xApp)
-customElements.define('x-embed', XEmbed)
+customElements.define(EMBED, XEmbed)
 customElements
 	.whenDefined(APP)
 	.then(() => (document.querySelector(APP) as Element).classList.add('show'))
