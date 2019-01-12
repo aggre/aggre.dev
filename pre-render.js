@@ -3,7 +3,6 @@ const micro = require('micro')
 const handler = require('serve-handler')
 const puppeteer = require('puppeteer')
 const { listFiles } = require('list-files-in-dir')
-const serveConfig = require('./serve.json')
 const port = 5000
 const format = h =>
 	typeof h === 'string' ? h.replace(/<\!---->|\s+?class="show"/g, '') : h
@@ -21,7 +20,13 @@ const getHTML = browser => async pathname => {
 }
 ;(async () => {
 	const serve = await micro((req, res) =>
-		handler(req, res, serveConfig)
+		handler(req, res, {
+			public: 'dist',
+			rewrites: [
+				{ source: 'post/**', destination: '/index.html' },
+				{ source: 'page/**', destination: '/index.html' }
+			]
+		})
 	).listen(port)
 	const pages = await listFiles('content').then(fls =>
 		fls
