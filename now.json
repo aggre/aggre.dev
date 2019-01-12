@@ -1,9 +1,14 @@
 {
 	"version": 2,
 	"alias": "aggre.io",
-	"builds": [
-		{ "src": "dist/**", "use": "@now/static" },
-		{ "src": "serve.js", "use": "@now/node-server" }
-	],
-	"routes": [{ "src": "/(.*)", "dest": "serve.js" }]
+	"builds": [{ "src": "dist/**", "use": "@now/static" }],
+	"routes": [
+		{
+			"src": "/(.*)",
+			"headers": {
+				"cache-control": "public, s-maxage=31536000"
+			},
+			"dest": "/dist/$1"
+		}
+	]
 }
