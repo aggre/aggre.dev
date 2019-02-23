@@ -7,8 +7,7 @@ import { style } from '../lib/style'
 
 export const header = () =>
 	component(html`
-		${
-			style`
+		${style`
 			header {
 				display: grid;
 				grid-template-areas: 'brand nav';
@@ -26,20 +25,17 @@ export const header = () =>
 			.nav {
 				grid-area: nav;
 			}
-		`
-		}
+		`}
 		<header>
 			<div class="brand">${a({ href: '/', content: 'aggre.io' })}</div>
 			<div class="nav">
-				${
-					subscribe(
-						navs,
-						x =>
-							html`
-								${nav(x)}
-							`
-					)
-				}
+				${subscribe(
+					navs,
+					x =>
+						html`
+							${nav(x)}
+						`
+				)}
 			</div>
 		</header>
 	`)

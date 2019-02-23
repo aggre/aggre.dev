@@ -1,9 +1,9 @@
-import { html } from 'lit-html'
+import { html, TemplateResult } from 'lit-html'
 import { route } from '../store/route'
 
 interface Props {
 	readonly href: string
-	readonly content: any
+	readonly content: TemplateResult | string
 }
 
 const handler = (url: string) => (e: Event) => {

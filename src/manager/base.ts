@@ -7,12 +7,13 @@ import { head } from '../component/head'
 import { BehaviorSubject, Subscription } from 'rxjs'
 import { Content } from '../store/content'
 
+// tslint:disable:no-void-expression
 export const base = (
 	route: BehaviorSubject<string>,
 	content: BehaviorSubject<Content>
 ) =>
 	new Set<Subscription>()
-		.add(route.subscribe(x => history.pushState(null, '', x)))
+		.add(route.subscribe(x => history.pushState(undefined, '', x)))
 		.add(route.subscribe(x => navs.next(changeActive(navs.value, x))))
 		.add(
 			route.subscribe(async x =>
@@ -21,9 +22,6 @@ export const base = (
 		)
 		.add(
 			content.subscribe(x =>
-				render(
-					head(route.value, x ? x.meta : undefined),
-					document.head as HTMLHeadElement
-				)
+				render(head(route.value, x ? x.meta : undefined), document.head)
 			)
 		)

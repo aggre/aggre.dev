@@ -15,6 +15,7 @@ const opts: ReadonlyArray<any> = [
 ]
 
 // tslint:disable:no-expression-statement
+// tslint:disable:no-unsafe-any
 describe('<nav>', () => {
 	describe('Returns template for nav element', () => {
 		it('nav element', () => {

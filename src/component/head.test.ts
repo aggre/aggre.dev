@@ -10,9 +10,9 @@ describe('<head>', () => {
 				image: '/test.jpg',
 				description: 'this is a test'
 			}),
-			document.head as HTMLHeadElement
+			document.head
 		)
-		const el = document.head as HTMLHeadElement
+		const el = document.head
 		expect(
 			(el.querySelector('link[rel=canonical]') as Element).getAttribute('href')
 		).to.be('https://aggre.io/test')

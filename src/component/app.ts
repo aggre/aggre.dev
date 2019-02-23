@@ -3,8 +3,7 @@ import { header } from './header'
 import { style } from '../lib/style'
 
 export const app = () => html`
-	${
-		style`
+	${style`
 		.app {
 			margin: auto;
 			max-width: 980px;
@@ -37,8 +36,7 @@ export const app = () => html`
 				margin-top: 2.4em;
 			}
 		}
-	`
-	}
+	`}
 	<div class="app">
 		<div class="header">${header()}</div>
 		<main><slot></slot></main>

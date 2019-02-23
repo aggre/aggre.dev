@@ -6,7 +6,7 @@ const regexYaml = /^`{3}(yml)?((?!`{3})[\w|\W])*`{3}(\n+)?/
 
 export const parseContent = (content: string): Content => {
 	const [yml] = content.match(regexYaml) || ['']
-	const meta: ContentMeta | undefined = load(yml.replace(regexMarker, ''))
+	const meta = load(yml.replace(regexMarker, '')) as ContentMeta | undefined
 	const body = content.replace(yml, '')
 	return {
 		meta,

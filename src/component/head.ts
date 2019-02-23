@@ -2,7 +2,7 @@ import { ContentMeta } from '../store/content'
 import { html } from 'lit-html'
 import { style } from '../lib/style'
 
-const highlight = (document.head as HTMLHeadElement).querySelector('#highlight')
+const highlight = document.head.querySelector('#highlight')
 
 export const head = (
 	route: string,
@@ -31,31 +31,28 @@ export const head = (
 	<meta property="og:site_name" content="${domain}" />
 	<meta property="og:type" content="${route === '/' ? 'website' : 'article'}" />
 	<meta property="og:url" content="${protocol}://${domain}${route}" />
-	<link rel="canonical" href="${protocol}://${domain}${route}" /> ${
-		meta
-			? html`
-					<meta property="og:title" content="${meta.title}" />
-					<meta name="description" content="${meta.description}" />
-					<meta property="og:description" content="${meta.description}" />
-					<meta
-						property="og:image"
-						content="${protocol}://${domain}${meta.image}"
-					/>
-					<meta
-						name="twitter:image"
-						content="${protocol}://${domain}${meta.image}"
-					/>
-			  `
-			: ''
-	} <meta name="twitter:card" content="summary_large_image" />
+	<link rel="canonical" href="${protocol}://${domain}${route}" /> ${meta
+		? html`
+				<meta property="og:title" content="${meta.title}" />
+				<meta name="description" content="${meta.description}" />
+				<meta property="og:description" content="${meta.description}" />
+				<meta
+					property="og:image"
+					content="${protocol}://${domain}${meta.image}"
+				/>
+				<meta
+					name="twitter:image"
+					content="${protocol}://${domain}${meta.image}"
+				/>
+		  `
+		: ''} <meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="//twitter.com/aggre_" />
 	<title>${meta ? meta.title : ''}</title> ${highlight}
 	<link
 		href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700|Noto+Sans+JP:400,700"
 		rel="stylesheet"
 	/>
-	${
-		style`
+	${style`
 		body {
 			margin: 0;
 			font-size: 1.1rem;
@@ -113,6 +110,5 @@ export const head = (
 			max-width: 100%;
 			height: auto;
 		}
-	`
-	}
+	`}
 `

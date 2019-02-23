@@ -8,9 +8,7 @@ import { skip } from 'rxjs/operators'
 // tslint:disable:no-expression-statement no-non-null-assertion
 describe('base manager', () => {
 	it('Subscribe to content and rerender head element', () => {
-		const title = (document.head as HTMLHeadElement).querySelector(
-			'title'
-		) as HTMLElement
+		const title = document.head.querySelector('title') as HTMLElement
 		const prevTitle = title.innerText
 		const subscriptions = base(route, content)
 		content.next({

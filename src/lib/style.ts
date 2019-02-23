@@ -4,9 +4,10 @@ import { until } from 'lit-html/directives/until'
 import postcssPresetEnv from 'postcss-preset-env'
 import { AcceptedPlugin } from 'postcss'
 
+// tslint:disable:no-unsafe-any
 export const processor = process({
 	// tslint:disable-next-line:readonly-array
-	plugins: [postcssPresetEnv({ stage: 0 })] as AcceptedPlugin[]
+	plugins: [postcssPresetEnv.default({ stage: 0 })] as AcceptedPlugin[]
 })
 
 export const style = directive(
