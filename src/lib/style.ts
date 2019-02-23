@@ -1,7 +1,7 @@
 import { process, directive } from 'lit-style'
 import { html } from 'lit-html'
 import { until } from 'lit-html/directives/until'
-import postcssPresetEnv from 'postcss-preset-env'
+import * as postcssPresetEnv from 'postcss-preset-env'
 import { AcceptedPlugin } from 'postcss'
 
 // tslint:disable:no-unsafe-any
