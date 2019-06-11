@@ -77,18 +77,16 @@ import { timer } from 'rxjs'
 
 export const template = html`
 	<main>
-		${
-			subscribe(
-				timer(10, 1),
-				x =>
-					html`
-						<p>${x}</p>
-					`,
+		${subscribe(
+			timer(10, 1),
+			x =>
 				html`
-					<p>Default content</p>
-				`
-			)
-		}
+					<p>${x}</p>
+				`,
+			html`
+				<p>Default content</p>
+			`
+		)}
 	</main>
 `
 ```
@@ -117,15 +115,13 @@ const click = <T>(store: BehaviorSubject<T>) => (next: () => T) => () =>
 const buttonClick = click(count)
 
 const template = () => html`
-	${button(buttonClick(() => count.value + 1))} ${
-		subscribe(
-			count,
-			x =>
-				html`
-					<p>Count: ${x}</p>
-				`
-		)
-	}
+	${button(buttonClick(() => count.value + 1))} ${subscribe(
+		count,
+		x =>
+			html`
+				<p>Count: ${x}</p>
+			`
+	)}
 `
 
 render(template(), document.body)
@@ -154,20 +150,18 @@ import { html } from 'lit-html'
 import { component } from 'ullr/directive'
 
 export default (title: string, desc: string) => html`
-	${
-		component(html`
-			<style>
-				h1 {
-					font-weight: 400;
-				}
-				p {
-					font-size: 1rem;
-				}
-			</style>
-			<h1>${title}</h1>
-			<p>${desc}</p>
-		`)
-	}
+	${component(html`
+		<style>
+			h1 {
+				font-weight: 400;
+			}
+			p {
+				font-size: 1rem;
+			}
+		</style>
+		<h1>${title}</h1>
+		<p>${desc}</p>
+	`)}
 `
 ```
 
@@ -209,22 +203,18 @@ import { component } from 'ullr/directive'
 import { style } from './style'
 
 export default (title: string, desc: string) => html`
-	${
-		component(html`
-			${
-				style`
+	${component(html`
+		${style`
 				h1 {
 					font-weight: 400;
 				}
 				p {
 					font-size: 1rem;
 				}
-			`
-			}
-			<h1>${title}</h1>
-			<p>${desc}</p>
-		`)
-	}
+			`}
+		<h1>${title}</h1>
+		<p>${desc}</p>
+	`)}
 `
 ```
 
