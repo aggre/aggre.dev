@@ -7,7 +7,7 @@ module.exports = function(config) {
 		plugins: ['karma-mocha', 'karma-mocha-reporter', 'karma-chrome-launcher'],
 		files: [
 			'node_modules/expect.js/index.js',
-			'dist/test.js',
+			'test/**/*.js',
 			{
 				pattern: 'content/**',
 				included: false,
@@ -17,7 +17,11 @@ module.exports = function(config) {
 			}
 		],
 		proxies: {
-			'/': '/base/content/'
+			'/asset': '/base/content/asset',
+			'/page': '/base/content/page',
+			'/post': '/base/content/post',
+			'/index.md': '/base/content/index.md',
+			'/post.md': '/base/content/index.md'
 		},
 		reporters: ['mocha'],
 		singleRun: true,

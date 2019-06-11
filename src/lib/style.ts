@@ -1,13 +1,13 @@
 import { process, directive } from 'lit-style'
 import { html } from 'lit-html'
 import { until } from 'lit-html/directives/until'
-import * as postcssPresetEnv from 'postcss-preset-env'
+import postcssPresetEnv from 'postcss-preset-env'
 import { AcceptedPlugin } from 'postcss'
 
 // tslint:disable:no-unsafe-any
 export const processor = process({
 	// tslint:disable-next-line:readonly-array
-	plugins: [postcssPresetEnv.default({ stage: 0 })] as AcceptedPlugin[]
+	plugins: [postcssPresetEnv({ stage: 0 })] as AcceptedPlugin[]
 })
 
 export const style = directive(

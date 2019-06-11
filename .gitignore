@@ -62,6 +62,7 @@ typings/
 
 # parcel build output
 dist
+test
 .cache
 
 # tsc build output
