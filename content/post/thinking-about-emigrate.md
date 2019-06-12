@@ -1,7 +1,7 @@
 ```yml
 title: エストニアかフィンランドへの移住を考えている
 description: 日本に居続けることの懸念, 教育への不安などを抱いている話。
-image: /asset/image/og.png
+image: /asset/image/in-the-garden-of-my-parents-house.jpg
 ```
 
 # エストニアかフィンランドへの移住を考えている
