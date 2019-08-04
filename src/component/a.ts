@@ -14,6 +14,12 @@ const handler = (url: string) => (e: Event) => {
 }
 
 export const a = (props: Props) =>
-	html`
-		<a href="${props.href}" @click="${handler(props.href)}">${props.content}</a>
-	`
+	props.href.startsWith('//')
+		? html`
+				<a href="${props.href}">${props.content}</a>
+		  `
+		: html`
+				<a href="${props.href}" @click="${handler(props.href)}"
+					>${props.content}</a
+				>
+		  `

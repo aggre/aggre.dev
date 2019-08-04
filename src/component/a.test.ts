@@ -9,4 +9,8 @@ describe('<a>', () => {
 		expect(el.getAttribute('href')).to.be('/test')
 		expect(el.innerHTML.replace(/<\!---->/g, '')).to.be('Test')
 	})
+
+	it('Handling routing when click event')
+
+	it('No handling click event when the href URL starts with //')
 })
