@@ -1,6 +1,6 @@
 ```yml
 title: Azure Blockchain Service に Solidity のスマートコントラクトをデプロイする
-description: lit-html + RxJS で FRP な構成のアプリケーションをつくり、SSR もしてみた
+description: Azure Blockchain Service で Solidity のテストをしたらとても簡単だった。
 image: /asset/image/azure-blockchain-service/setting.png
 ```
 
