@@ -4,6 +4,7 @@ description: aggre のブログ
 image: /asset/image/og.png
 ```
 
+- [GitHub Packages でパッケージを公開する](/post/publish-package-with-github-packages)
 - [Azure Blockchain Service に Solidity のスマートコントラクトをデプロイする](/post/deploy-smart-contracts-to-azure-blockchain-service)
 - [エストニアかフィンランドへの移住を考えている](/post/thinking-about-emigrate)
 - [好きなアニメを いい... で語りたい](/post/talk-about-anime)
