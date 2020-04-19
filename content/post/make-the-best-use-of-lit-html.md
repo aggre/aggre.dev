@@ -79,13 +79,8 @@ export const template = html`
 	<main>
 		${subscribe(
 			timer(10, 1),
-			x =>
-				html`
-					<p>${x}</p>
-				`,
-			html`
-				<p>Default content</p>
-			`
+			(x) => html` <p>${x}</p> `,
+			html` <p>Default content</p> `
 		)}
 	</main>
 `
@@ -117,10 +112,7 @@ const buttonClick = click(count)
 const template = () => html`
 	${button(buttonClick(() => count.value + 1))} ${subscribe(
 		count,
-		x =>
-			html`
-				<p>Count: ${x}</p>
-			`
+		(x) => html` <p>Count: ${x}</p> `
 	)}
 `
 
@@ -181,12 +173,12 @@ import { until } from 'lit-html/directives/until'
 import postcssPresetEnv from 'postcss-preset-env'
 
 const processor = process({
-	plugins: [postcssPresetEnv({ stage: 3 })]
+	plugins: [postcssPresetEnv({ stage: 3 })],
 })
 
 export const style = directive(
 	processor,
-	css =>
+	(css) =>
 		html`
 			<style>
 				${until(css)}

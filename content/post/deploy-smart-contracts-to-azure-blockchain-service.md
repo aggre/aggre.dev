@@ -56,17 +56,17 @@ const HDWalletProvider = require('truffle-hdwallet-provider')
 module.exports = {
 	compilers: {
 		solc: {
-			version: '^0.5.9'
-		}
+			version: '^0.5.9',
+		},
 	},
 	networks: {
 		azure: {
 			provider: () => new HDWalletProvider('mnemonic words...', 'https://...'),
 			network_id: '*',
 			gas: 0,
-			gasPrice: 0
-		}
-	}
+			gasPrice: 0,
+		},
+	},
 }
 ```
 
@@ -99,7 +99,7 @@ Truffle から Azure にデプロイするために、Truffle のマイグレー
 デプロイして動作確認したいコントラクトは今回、Allocator, MarketFactory, PropertyFactory, State の 4 つだ。
 
 ```js
-const load = deployerFn => contract =>
+const load = (deployerFn) => (contract) =>
 	deployerFn.deploy(artifacts.require(contract))
 
 module.exports = (deployer, network) => {
@@ -136,12 +136,12 @@ npx truffle migrate --reset --network azure
 
 ```js
 // azure.js
-module.exports = done => {
+module.exports = (done) => {
 	artifacts
 		.require('State')
 		.deployed()
-		.then(res => res.token())
-		.then(res => {
+		.then((res) => res.token())
+		.then((res) => {
 			console.log(res)
 			done()
 		})

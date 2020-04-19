@@ -7,19 +7,19 @@ const subs = new Set<Subscription>()
 
 // tslint:disable:no-expression-statement
 describe('route store', () => {
-	it('initial value', done => {
+	it('initial value', (done) => {
 		subs.add(
-			route.subscribe(x => {
+			route.subscribe((x) => {
 				expect(x).to.be(location.pathname)
 				done()
 			})
 		)
 	})
 
-	it('subscribe', done => {
+	it('subscribe', (done) => {
 		const next = '/next'
 		subs.add(
-			route.pipe(skip(1)).subscribe(x => {
+			route.pipe(skip(1)).subscribe((x) => {
 				expect(x).to.be(next)
 				done()
 			})

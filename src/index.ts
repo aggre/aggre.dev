@@ -19,17 +19,12 @@ customElements
 	.then(() => {
 		;(document.querySelector(APP) as Element).classList.add('show')
 	})
-	.catch(err => {
+	.catch((err) => {
 		console.warn(err)
 	})
 
 base(route, content)
 
-content.pipe(skip(RENDERED ? 2 : 0)).subscribe(x => {
-	render(
-		html`
-			${markedHTML(x ? x.body : '')}
-		`,
-		ROOT || document.body
-	)
+content.pipe(skip(RENDERED ? 2 : 0)).subscribe((x) => {
+	render(html` ${markedHTML(x ? x.body : '')} `, ROOT || document.body)
 })

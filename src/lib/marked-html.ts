@@ -13,10 +13,7 @@ const parse = markdownIt({
 					hljs.highlight(lang, str, true).value
 			  }</code></pre>`
 			: str
-	}
+	},
 })
 
-export const markedHTML = (md = '') =>
-	html`
-		${unsafeHTML(parse.render(md))}
-	`
+export const markedHTML = (md = '') => html` ${unsafeHTML(parse.render(md))} `

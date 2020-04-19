@@ -14,8 +14,8 @@ describe('base manager', () => {
 		content.next({
 			body: '',
 			meta: {
-				title: '***TEST***'
-			}
+				title: '***TEST***',
+			},
 		})
 		expect(prevTitle).to.not.be(title.innerText)
 		expect(title.innerText).to.be('***TEST***')
@@ -34,9 +34,9 @@ describe('base manager', () => {
 	it('Subscribe to route and change active nav', () => {
 		const subscriptions = base(route, content)
 		route.next('/')
-		const prevActiveNav = navs.value.findIndex(x => x.active)
+		const prevActiveNav = navs.value.findIndex((x) => x.active)
 		route.next('/post')
-		const nextActiveNav = navs.value.findIndex(x => x.active)
+		const nextActiveNav = navs.value.findIndex((x) => x.active)
 		expect(prevActiveNav).to.not.be(nextActiveNav)
 		expect(nextActiveNav).to.be(1)
 		cancel(subscriptions)
@@ -46,11 +46,11 @@ describe('base manager', () => {
 		const prevContent = content.value
 		const subscriptions = base(route, content)
 		const exSubscriptions = new Set([
-			content.pipe(skip(1)).subscribe(x => {
+			content.pipe(skip(1)).subscribe((x) => {
 				expect(prevContent).to.not.be(x)
 				expect(x.meta!.title).to.be('🍣')
 				cancel(subscriptions)
-			})
+			}),
 		])
 		route.next('/page/sushi')
 

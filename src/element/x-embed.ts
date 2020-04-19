@@ -20,20 +20,20 @@ export class XEmbed extends HTMLElement {
 		const { content } = template
 		const node = document.importNode(content, true)
 		const scriptsInTemplate = Array.from(node.querySelectorAll('script'))
-		const scripts = scriptsInTemplate.map(s => {
+		const scripts = scriptsInTemplate.map((s) => {
 			const script = document.createElement('script')
-			s.getAttributeNames().map(attr => {
+			s.getAttributeNames().map((attr) => {
 				script.setAttribute(attr, s.getAttribute(attr) as string)
 			})
 			return script
 		})
 		container.appendChild(node)
-		scriptsInTemplate.forEach(s => {
+		scriptsInTemplate.forEach((s) => {
 			if (s.parentNode) {
 				s.parentNode.removeChild(s)
 			}
 		})
-		scripts.forEach(s => {
+		scripts.forEach((s) => {
 			container.appendChild(s)
 		})
 		this.appendChild(container)

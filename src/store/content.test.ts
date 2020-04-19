@@ -7,26 +7,26 @@ const subs = new Set<Subscription>()
 
 // tslint:disable:no-expression-statement
 describe('content store', () => {
-	it('initial value', done => {
+	it('initial value', (done) => {
 		subs.add(
-			content.subscribe(x => {
+			content.subscribe((x) => {
 				expect(x).to.be.ok()
 				done()
 			})
 		)
 	})
 
-	it('subscribe', done => {
+	it('subscribe', (done) => {
 		const next = {
 			body: 'Test',
 			meta: {
 				title: 'Title',
 				image: '/test.jpg',
-				description: 'this is a test'
-			}
+				description: 'this is a test',
+			},
 		}
 		subs.add(
-			content.pipe(skip(1)).subscribe(x => {
+			content.pipe(skip(1)).subscribe((x) => {
 				expect(x).to.eql(next)
 				done()
 			})

@@ -1,6 +1,6 @@
 process.env.CHROME_BIN = require('puppeteer').executablePath()
 
-module.exports = function(config) {
+module.exports = function (config) {
 	config.set({
 		basePath: '',
 		frameworks: ['mocha'],
@@ -13,28 +13,28 @@ module.exports = function(config) {
 				included: false,
 				served: true,
 				watched: false,
-				nocache: true
-			}
+				nocache: true,
+			},
 		],
 		proxies: {
 			'/asset': '/base/content/asset',
 			'/page': '/base/content/page',
 			'/post': '/base/content/post',
 			'/index.md': '/base/content/index.md',
-			'/post.md': '/base/content/index.md'
+			'/post.md': '/base/content/index.md',
 		},
 		reporters: ['mocha'],
 		singleRun: true,
 		customLaunchers: {
 			ChromiumHeadlessConfigured: {
 				base: 'ChromeHeadless',
-				flags: ['--no-sandbox', '--disable-setuid-sandbox']
-			}
+				flags: ['--no-sandbox', '--disable-setuid-sandbox'],
+			},
 		},
 		browsers: ['ChromiumHeadlessConfigured'],
 		browserConsoleLogOptions: {
 			level: 'log',
-			terminal: true
-		}
+			terminal: true,
+		},
 	})
 }

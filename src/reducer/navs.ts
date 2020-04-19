@@ -3,7 +3,7 @@ import { Navs, Nav } from '../store/navs'
 const createNav = ({ link, label, active }: Nav): Nav => ({
 	link,
 	label,
-	active
+	active,
 })
 
 export const changeActive = (navs: Navs, link: string) =>
@@ -11,6 +11,6 @@ export const changeActive = (navs: Navs, link: string) =>
 		createNav({
 			link: originalLink,
 			label,
-			active: originalLink === link
+			active: originalLink === link,
 		})
 	)

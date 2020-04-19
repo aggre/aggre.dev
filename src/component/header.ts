@@ -29,13 +29,7 @@ export const header = () =>
 		<header>
 			<div class="brand">${a({ href: '/', content: 'aggre.io' })}</div>
 			<div class="nav">
-				${subscribe(
-					navs,
-					x =>
-						html`
-							${nav(x)}
-						`
-				)}
+				${subscribe(navs, (x) => html` ${nav(x)} `)}
 			</div>
 		</header>
 	`)

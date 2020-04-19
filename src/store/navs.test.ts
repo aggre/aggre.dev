@@ -7,30 +7,30 @@ const subs = new Set<Subscription>()
 
 // tslint:disable:no-expression-statement
 describe('navs store', () => {
-	it('initial value', done => {
+	it('initial value', (done) => {
 		subs.add(
-			navs.subscribe(x => {
+			navs.subscribe((x) => {
 				expect(x).to.be.ok()
 				done()
 			})
 		)
 	})
 
-	it('subscribe', done => {
+	it('subscribe', (done) => {
 		const next: ReadonlyArray<any> = [
 			{
 				label: 'test',
 				link: '/test',
-				active: true
+				active: true,
 			},
 			{
 				label: 'spec',
 				link: '/spec',
-				active: false
-			}
+				active: false,
+			},
 		]
 		subs.add(
-			navs.pipe(skip(1)).subscribe(x => {
+			navs.pipe(skip(1)).subscribe((x) => {
 				expect(x).to.eql(next)
 				done()
 			})

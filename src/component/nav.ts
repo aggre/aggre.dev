@@ -30,12 +30,12 @@ export const nav = (items: Navs) =>
 			<ul>
 				${repeat(
 					items,
-					item =>
+					(item) =>
 						html`
 							<li class="${item.active ? 'active' : ''}">
 								${a({
 									href: item.link,
-									content: item.label
+									content: item.label,
 								})}
 							</li>
 						`

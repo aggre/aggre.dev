@@ -10,6 +10,6 @@ export const parseContent = (content: string): Content => {
 	const body = content.replace(yml, '')
 	return {
 		meta,
-		body
+		body,
 	}
 }

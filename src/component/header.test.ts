@@ -4,12 +4,7 @@ import { render, html } from 'lit-html'
 // tslint:disable:no-expression-statement
 describe('header', () => {
 	it('Returns template for header element', () => {
-		render(
-			html`
-				${header()}
-			`,
-			document.body
-		)
+		render(html` ${header()} `, document.body)
 		const el = (document.body.querySelector('ullr-shdw') as HTMLElement)
 			.shadowRoot as ShadowRoot
 		expect(el.querySelector('header')).to.be.ok()

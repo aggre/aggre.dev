@@ -8,7 +8,7 @@ describe('<head>', () => {
 			head('/test', {
 				title: 'Test',
 				image: '/test.jpg',
-				description: 'this is a test'
+				description: 'this is a test',
 			}),
 			document.head
 		)

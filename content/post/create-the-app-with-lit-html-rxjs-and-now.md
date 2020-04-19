@@ -29,10 +29,7 @@ What's [lit-html](https://github.com/Polymer/lit-html)、は省略する。
 ```ts
 import { html, render } from 'lit-html'
 
-const helloTemplate = (name: string) =>
-	html`
-		<div>Hello ${name}!</div>
-	`
+const helloTemplate = (name: string) => html` <div>Hello ${name}!</div> `
 
 render(helloTemplate('Kevin'), document.body)
 ```
@@ -82,12 +79,7 @@ lit-html によるテンプレートは、`render()` を実行する度に差分
 こんなふうに。
 
 ```ts
-render(
-	html`
-		${root}
-	`,
-	document.getElementById('root')
-)
+render(html` ${root} `, document.getElementById('root'))
 ```
 
 ソースでいうと https://github.com/aggre/aggre.io/blob/master/src/index.ts にあたる。
@@ -99,13 +91,9 @@ import { html, directive } from 'lit-html'
 import { content } from '../store/content'
 import { markedHTML } from '../lib/marked-html'
 
-export const root = directive(part => {
-	content.subscribe(x => {
-		part.setValue(
-			html`
-				<x-app>${markedHTML(x ? x.body : '')}</x-app>
-			`
-		)
+export const root = directive((part) => {
+	content.subscribe((x) => {
+		part.setValue(html` <x-app>${markedHTML(x ? x.body : '')}</x-app> `)
 		part.commit()
 	})
 })
@@ -194,7 +182,7 @@ export const header = () =>
 		</style>
 		<header>
 			<div class="brand">${a({ href: '/', content: 'aggre.io' })}</div>
-			<div class="nav">${subscribe(navs, x => nav(x))}</div>
+			<div class="nav">${subscribe(navs, (x) => nav(x))}</div>
 		</header>
 	`)
 ```

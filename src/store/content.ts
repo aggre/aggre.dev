@@ -11,5 +11,5 @@ export interface Content {
 }
 
 export const content = new BehaviorSubject<Content>({
-	body: ''
+	body: '',
 })

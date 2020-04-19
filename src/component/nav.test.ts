@@ -5,13 +5,13 @@ const opts: ReadonlyArray<any> = [
 	{
 		label: 'test',
 		link: '/test',
-		active: true
+		active: true,
 	},
 	{
 		label: 'spec',
 		link: '/spec',
-		active: false
-	}
+		active: false,
+	},
 ]
 
 // tslint:disable:no-expression-statement
@@ -19,24 +19,14 @@ const opts: ReadonlyArray<any> = [
 describe('<nav>', () => {
 	describe('Returns template for nav element', () => {
 		it('nav element', () => {
-			render(
-				html`
-					${nav(opts)}
-				`,
-				document.body
-			)
+			render(html` ${nav(opts)} `, document.body)
 			const el = (document.body.querySelector('ullr-shdw') as HTMLElement)
 				.shadowRoot as ShadowRoot
 			expect(el.querySelector('nav')).to.be.ok()
 		})
 
 		it('active and inactive', () => {
-			render(
-				html`
-					${nav(opts)}
-				`,
-				document.body
-			)
+			render(html` ${nav(opts)} `, document.body)
 			const el = (document.body.querySelector('ullr-shdw') as HTMLElement)
 				.shadowRoot as ShadowRoot
 			expect(
@@ -48,12 +38,7 @@ describe('<nav>', () => {
 		})
 
 		it('list of link', () => {
-			render(
-				html`
-					${nav(opts)}
-				`,
-				document.body
-			)
+			render(html` ${nav(opts)} `, document.body)
 			const el = (document.body.querySelector('ullr-shdw') as HTMLElement)
 				.shadowRoot as ShadowRoot
 			Array.from(el.querySelectorAll('nav > ul > li')).forEach((item, i) => {

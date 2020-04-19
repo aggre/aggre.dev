@@ -13,15 +13,15 @@ export const base = (
 	content: BehaviorSubject<Content>
 ) =>
 	new Set<Subscription>()
-		.add(route.subscribe(x => history.pushState(undefined, '', x)))
-		.add(route.subscribe(x => navs.next(changeActive(navs.value, x))))
+		.add(route.subscribe((x) => history.pushState(undefined, '', x)))
+		.add(route.subscribe((x) => navs.next(changeActive(navs.value, x))))
 		.add(
-			route.subscribe(async x =>
-				fetchContent(x).then(text => content.next(parseContent(text)))
+			route.subscribe(async (x) =>
+				fetchContent(x).then((text) => content.next(parseContent(text)))
 			)
 		)
 		.add(
-			content.subscribe(x =>
+			content.subscribe((x) =>
 				render(head(route.value, x ? x.meta : undefined), document.head)
 			)
 		)

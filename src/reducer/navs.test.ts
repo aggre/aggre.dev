@@ -4,13 +4,13 @@ const navs: ReadonlyArray<any> = [
 	{
 		label: 'test',
 		link: '/test',
-		active: true
+		active: true,
 	},
 	{
 		label: 'spec',
 		link: '/spec',
-		active: false
-	}
+		active: false,
+	},
 ]
 // tslint:disable:no-expression-statement
 describe('navs reducers', () => {
@@ -19,13 +19,13 @@ describe('navs reducers', () => {
 			{
 				label: 'test',
 				link: '/test',
-				active: false
+				active: false,
 			},
 			{
 				label: 'spec',
 				link: '/spec',
-				active: true
-			}
+				active: true,
+			},
 		])
 	})
 })

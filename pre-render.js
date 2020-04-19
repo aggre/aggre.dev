@@ -5,14 +5,14 @@ const puppeteer = require('puppeteer')
 const { listFiles } = require('list-files-in-dir')
 const serveConfig = require('./serve.json')
 const port = 5000
-const format = h =>
+const format = (h) =>
 	typeof h === 'string' ? h.replace(/<\!---->|\s+?class="show"/g, '') : h
 const write = async (path, content) => writeFile.promise(path, content)
-const getHTML = browser => async pathname => {
+const getHTML = (browser) => async (pathname) => {
 	console.info('render start', pathname)
 	const page = await browser.newPage()
 	await page.goto(`http://localhost:${port}${pathname}`, {
-		waitUntil: 'domcontentloaded'
+		waitUntil: 'domcontentloaded',
 	})
 	await page.waitForSelector('x-app > *')
 	const html = await page.content()
@@ -23,19 +23,19 @@ const getHTML = browser => async pathname => {
 	const serve = await micro((req, res) =>
 		handler(req, res, serveConfig)
 	).listen(port)
-	const pages = await listFiles('content').then(fls =>
+	const pages = await listFiles('content').then((fls) =>
 		fls
-			.filter(f => f.endsWith('.md'))
-			.map(f =>
+			.filter((f) => f.endsWith('.md'))
+			.map((f) =>
 				f.replace(`${__dirname}/content`, '').replace(/(\.md|index)/g, '')
 			)
 	)
 	const browser = await puppeteer.launch({
 		headless: true,
-		args: ['--no-sandbox', '--disable-setuid-sandbox']
+		args: ['--no-sandbox', '--disable-setuid-sandbox'],
 	})
 	const ssr = getHTML(browser)
-	const htmls = await Promise.all(pages.map(page => ssr(page)))
+	const htmls = await Promise.all(pages.map((page) => ssr(page)))
 	await browser.close()
 	await Promise.all(
 		pages.map((page, i) => write(`dist${page}/index.html`, format(htmls[i])))
