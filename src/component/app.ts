@@ -1,8 +1,8 @@
-import { html } from 'lit-html'
+import { html, TemplateResult } from 'lit-html'
 import { header } from './header'
 import { style } from '../lib/style'
 
-export const app = () => html`
+export const app = (): TemplateResult => html`
 	${style`
 		.app {
 			margin: auto;

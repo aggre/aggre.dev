@@ -27,7 +27,7 @@ describe('<head>', () => {
 			) as Element).getAttribute('content')
 		).to.be('aggre.io')
 		expect(
-			(el.querySelector('title') as Element).innerHTML.replace(/<\!---->/g, '')
+			(el.querySelector('title') as Element).innerHTML.replace(/<!---->/g, '')
 		).to.be('Test')
 		expect(
 			(el.querySelector('meta[property="og:title"]') as Element).getAttribute(

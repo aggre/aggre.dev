@@ -1,11 +1,11 @@
 import { BehaviorSubject } from 'rxjs'
 
-export interface ContentMeta {
+export type ContentMeta = {
 	readonly title?: string
 	readonly image?: string
 	readonly description?: string
 }
-export interface Content {
+export type Content = {
 	readonly meta?: ContentMeta
 	readonly body: string
 }

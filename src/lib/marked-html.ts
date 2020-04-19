@@ -1,12 +1,11 @@
 import markdownIt from 'markdown-it'
 import hljs from 'highlight.js'
-import { html } from 'lit-html'
+import { html, TemplateResult } from 'lit-html'
 import { unsafeHTML } from 'lit-html/directives/unsafe-html'
 
 const parse = markdownIt({
 	html: true,
 	linkify: true,
-	// tslint:disable-next-line:typedef
 	highlight(str, lang) {
 		return lang && hljs.getLanguage(lang)
 			? `<pre class=hljs><code>${
@@ -16,4 +15,5 @@ const parse = markdownIt({
 	},
 })
 
-export const markedHTML = (md = '') => html` ${unsafeHTML(parse.render(md))} `
+export const markedHTML = (md = ''): TemplateResult =>
+	html` ${unsafeHTML(parse.render(md))} `

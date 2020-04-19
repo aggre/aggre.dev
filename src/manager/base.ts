@@ -7,11 +7,10 @@ import { head } from '../component/head'
 import { BehaviorSubject, Subscription } from 'rxjs'
 import { Content } from '../store/content'
 
-// tslint:disable:no-void-expression
 export const base = (
 	route: BehaviorSubject<string>,
 	content: BehaviorSubject<Content>
-) =>
+): ReadonlySet<Subscription> =>
 	new Set<Subscription>()
 		.add(route.subscribe((x) => history.pushState(undefined, '', x)))
 		.add(route.subscribe((x) => navs.next(changeActive(navs.value, x))))

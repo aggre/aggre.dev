@@ -1,6 +1,6 @@
 import { BehaviorSubject } from 'rxjs'
 
-export interface Nav {
+export type Nav = {
 	readonly label: string
 	readonly link: string
 	readonly active: boolean

@@ -1,11 +1,11 @@
 import { html } from 'lit-html'
 import { repeat } from 'lit-html/directives/repeat'
-import { component } from 'ullr/directive'
+import { component, DirectiveFunction } from 'ullr/directive'
 import { a } from './a'
 import { Navs } from '../store/navs'
 import { style } from '../lib/style'
 
-export const nav = (items: Navs) =>
+export const nav = (items: Navs): DirectiveFunction =>
 	component(html`
 		${style`
 			ul {

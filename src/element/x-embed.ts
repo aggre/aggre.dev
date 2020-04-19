@@ -1,14 +1,14 @@
-// tslint:disable:no-class
-// tslint:disable:no-this
-// tslint:disable:no-if-statement
-// tslint:disable:no-expression-statement
-// tslint:disable:no-object-mutation
-// tslint:disable:typedef
+/* eslint-disable functional/no-expression-statement */
+/* eslint-disable functional/no-return-void */
+/* eslint-disable functional/no-conditional-statement */
+/* eslint-disable functional/functional-parameters */
+/* eslint-disable functional/no-this-expression */
+/* eslint-disable functional/no-class */
 
 const cls = 'activated'
 
 export class XEmbed extends HTMLElement {
-	connectedCallback() {
+	connectedCallback(): void {
 		const template = this.querySelector('template')
 		const activated = this.querySelector(`.${cls}`)
 		if (!template || activated) {

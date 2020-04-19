@@ -48,7 +48,7 @@ describe('<nav>', () => {
 				).to.be(opts[i].link)
 				expect(
 					(item.querySelector('a') as HTMLAnchorElement).innerHTML.replace(
-						/<\!---->/g,
+						/<!---->/g,
 						''
 					)
 				).to.be(opts[i].label)

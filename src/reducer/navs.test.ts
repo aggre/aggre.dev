@@ -1,6 +1,10 @@
 import { changeActive } from './navs'
 
-const navs: ReadonlyArray<any> = [
+const navs: ReadonlyArray<{
+	readonly label: string
+	readonly link: string
+	readonly active: boolean
+}> = [
 	{
 		label: 'test',
 		link: '/test',
@@ -12,7 +16,7 @@ const navs: ReadonlyArray<any> = [
 		active: false,
 	},
 ]
-// tslint:disable:no-expression-statement
+
 describe('navs reducers', () => {
 	it('changeActive', () => {
 		expect(changeActive(navs, '/spec')).to.eql([

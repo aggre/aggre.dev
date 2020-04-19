@@ -1,3 +1,7 @@
+/* eslint-disable functional/no-expression-statement */
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-var-requires */
 const writeFile = require('write')
 const micro = require('micro')
 const handler = require('serve-handler')
@@ -6,7 +10,7 @@ const { listFiles } = require('list-files-in-dir')
 const serveConfig = require('./serve.json')
 const port = 5000
 const format = (h) =>
-	typeof h === 'string' ? h.replace(/<\!---->|\s+?class="show"/g, '') : h
+	typeof h === 'string' ? h.replace(/<!---->|\s+?class="show"/g, '') : h
 const write = async (path, content) => writeFile.promise(path, content)
 const getHTML = (browser) => async (pathname) => {
 	console.info('render start', pathname)

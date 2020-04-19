@@ -5,7 +5,6 @@ import { cancel } from '../lib/cancel'
 import { navs } from '../store/navs'
 import { skip } from 'rxjs/operators'
 
-// tslint:disable:no-expression-statement no-non-null-assertion
 describe('base manager', () => {
 	it('Subscribe to content and rerender head element', () => {
 		const title = document.head.querySelector('title') as HTMLElement
@@ -48,7 +47,7 @@ describe('base manager', () => {
 		const exSubscriptions = new Set([
 			content.pipe(skip(1)).subscribe((x) => {
 				expect(prevContent).to.not.be(x)
-				expect(x.meta!.title).to.be('🍣')
+				expect(x.meta?.title).to.be('🍣')
 				cancel(subscriptions)
 			}),
 		])

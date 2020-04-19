@@ -6,7 +6,7 @@ const createNav = ({ link, label, active }: Nav): Nav => ({
 	active,
 })
 
-export const changeActive = (navs: Navs, link: string) =>
+export const changeActive = (navs: Navs, link: string): readonly Nav[] =>
 	navs.map(({ link: originalLink, label }) =>
 		createNav({
 			link: originalLink,

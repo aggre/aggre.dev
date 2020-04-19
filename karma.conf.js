@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable no-undef */
+/* eslint-disable functional/no-expression-statement */
+/* eslint-disable functional/immutable-data */
 process.env.CHROME_BIN = require('puppeteer').executablePath()
 
 module.exports = function (config) {

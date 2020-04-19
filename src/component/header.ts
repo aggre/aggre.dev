@@ -1,11 +1,11 @@
 import { html } from 'lit-html'
 import { nav } from './nav'
 import { navs } from '../store/navs'
-import { subscribe, component } from 'ullr/directive'
+import { subscribe, component, DirectiveFunction } from 'ullr/directive'
 import { a } from './a'
 import { style } from '../lib/style'
 
-export const header = () =>
+export const header = (): DirectiveFunction =>
 	component(html`
 		${style`
 			header {

@@ -5,7 +5,6 @@ import { Subscription } from 'rxjs'
 
 const subs = new Set<Subscription>()
 
-// tslint:disable:no-expression-statement
 describe('navs store', () => {
 	it('initial value', (done) => {
 		subs.add(

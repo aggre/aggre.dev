@@ -1,5 +1,5 @@
 import { ContentMeta } from '../store/content'
-import { html } from 'lit-html'
+import { html, TemplateResult } from 'lit-html'
 import { style } from '../lib/style'
 
 const highlight = document.head.querySelector('#highlight')
@@ -9,7 +9,7 @@ export const head = (
 	meta?: ContentMeta,
 	domain = 'aggre.io',
 	protocol = 'https'
-) => html`
+): TemplateResult => html`
 	<script
 		async
 		src="https://www.googletagmanager.com/gtag/js?id=UA-5710337-14"

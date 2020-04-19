@@ -1,19 +1,19 @@
 import { html, TemplateResult } from 'lit-html'
 import { route } from '../store/route'
 
-interface Props {
+type Props = {
 	readonly href: string
 	readonly content: TemplateResult | string
 }
 
 const handler = (url: string) => (e: Event) => {
-	// tslint:disable-next-line:no-expression-statement
+	// eslint-disable-next-line functional/no-expression-statement
 	e.preventDefault()
-	// tslint:disable-next-line:no-expression-statement
+	// eslint-disable-next-line functional/no-expression-statement
 	route.next(url)
 }
 
-export const a = (props: Props) =>
+export const a = (props: Props): TemplateResult =>
 	props.href.startsWith('//')
 		? html` <a href="${props.href}">${props.content}</a> `
 		: html`
