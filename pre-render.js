@@ -11,7 +11,7 @@ const serveConfig = require('./serve.json')
 const port = 5000
 const format = (h) =>
 	typeof h === 'string' ? h.replace(/<!---->|\s+?class="show"/g, '') : h
-const write = async (path, content) => writeFile.promise(path, content)
+const write = async (path, content) => writeFile(path, content)
 const getHTML = (browser) => async (pathname) => {
 	console.info('render start', pathname)
 	const page = await browser.newPage()
