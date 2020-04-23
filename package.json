@@ -11,7 +11,6 @@
 		"writing": "cpx 'content/**' dist --watch",
 		"html": "parcel build src/index.html --no-source-maps",
 		"render": "node pre-render.js",
-		"prerender": "npm run build",
 		"test": "karma start",
 		"pretest": "parcel build src/test.ts --out-dir test --no-source-maps --no-minify",
 		"lint": "eslint . --ext .ts,.js --fix",
