@@ -4,7 +4,7 @@ description: aggre のブログ
 image: /asset/image/og.png
 ```
 
-- [](/post/ghost-in-the-shell-sac_2045-makes-a-new-era)
+- [攻殻機動隊 SAC_2045 の映像は時代を作るものだと思った](/post/ghost-in-the-shell-sac_2045-makes-a-new-era)
 - [GitHub Packages でパッケージを公開する](/post/publish-package-with-github-packages)
 - [Azure Blockchain Service に Solidity のスマートコントラクトをデプロイする](/post/deploy-smart-contracts-to-azure-blockchain-service)
 - [エストニアかフィンランドへの移住を考えている](/post/thinking-about-emigrate)
