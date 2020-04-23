@@ -67,3 +67,5 @@ test
 
 # tsc build output
 src/**/*.js
+
+.now
