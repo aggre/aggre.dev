@@ -37,6 +37,7 @@ export const app = (): TemplateResult => html`
 			}
 			&(table) {
 				width: 100%;
+				font-size: 0.9rem;
 			}
 	}
 	`}
