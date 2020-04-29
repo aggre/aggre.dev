@@ -35,7 +35,10 @@ export const app = (): TemplateResult => html`
 			&(h3) {
 				margin-top: 2.4em;
 			}
-		}
+			&(table) {
+				width: 100%;
+			}
+	}
 	`}
 	<div class="app">
 		<div class="header">${header()}</div>
