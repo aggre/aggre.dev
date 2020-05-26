@@ -34,7 +34,7 @@
 		"lit-style": "1.1.4",
 		"markdown-it": "11.0.0",
 		"micro": "9.3.4",
-		"postcss": "7.0.30",
+		"postcss": "7.0.31",
 		"postcss-preset-env": "6.7.0",
 		"ramda": "0.27.0",
 		"rxjs": "6.5.5",
