@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const writeFile = require('write')
+const write = require('write')
 const micro = require('micro')
 const handler = require('serve-handler')
 const puppeteer = require('puppeteer')
@@ -11,7 +11,6 @@ const serveConfig = require('./serve.json')
 const port = 5000
 const format = (h) =>
 	typeof h === 'string' ? h.replace(/<!---->|\s+?class="show"/g, '') : h
-const write = async (path, content) => writeFile(path, content)
 const getHTML = (browser) => async (pathname) => {
 	console.info('render start', pathname)
 	const page = await browser.newPage()
@@ -39,7 +38,7 @@ const getHTML = (browser) => async (pathname) => {
 		args: ['--no-sandbox', '--disable-setuid-sandbox'],
 	})
 	const ssr = getHTML(browser)
-	const htmls = await Promise.all(pages.map((page) => ssr(page)))
+	const htmls = await Promise.all(pages.map(ssr))
 	await browser.close()
 	await Promise.all(
 		pages.map((page, i) => write(`dist${page}/index.html`, format(htmls[i])))

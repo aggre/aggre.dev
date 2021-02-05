@@ -4,20 +4,16 @@
 		"project": "./tsconfig.json",
 		"tsconfigRootDir": "."
 	},
-	"plugins": ["@typescript-eslint", "functional", "prettier"],
+	"plugins": ["@typescript-eslint", "functional"],
 	"extends": [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/eslint-recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:functional/external-recommended",
-		"plugin:functional/recommended",
-		"plugin:prettier/recommended",
+		"plugin:functional/all",
+		"prettier",
 		"prettier/@typescript-eslint"
 	],
-	"rules": {
-		"prettier/prettier": "error",
-		"functional/functional-parameters": "warn"
-	},
 	"overrides": [
 		{
 			"files": ["*.js"],
