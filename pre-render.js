@@ -8,7 +8,7 @@ const handler = require('serve-handler')
 const puppeteer = require('puppeteer')
 const { listFiles } = require('list-files-in-dir')
 const serveConfig = require('./serve.json')
-const port = 5000
+const port = 5555
 const format = (h) =>
 	typeof h === 'string' ? h.replace(/<!---->|\s+?class="show"/g, '') : h
 const getHTML = (browser) => async (pathname) => {
