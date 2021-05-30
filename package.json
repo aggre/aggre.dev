@@ -28,7 +28,7 @@
 	},
 	"homepage": "https://github.com/aggre/aggre.io#readme",
 	"dependencies": {
-		"highlight.js": "10.7.1",
+		"highlight.js": "11.0.0",
 		"js-yaml": "4.1.0",
 		"lit-html": "1.4.1",
 		"lit-style": "1.1.4",
