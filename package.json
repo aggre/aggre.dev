@@ -30,7 +30,7 @@
 	"dependencies": {
 		"highlight.js": "11.2.0",
 		"js-yaml": "4.1.0",
-		"lit-html": "2.0.0",
+		"lit-html": "2.0.1",
 		"lit-style": "1.1.4",
 		"markdown-it": "12.2.0",
 		"micro": "9.3.4",
