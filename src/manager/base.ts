@@ -1,4 +1,4 @@
-import { render } from 'lit-html'
+import { render } from 'lit'
 import { fetchContent } from '../lib/fetch-content'
 import { navs } from '../store/navs'
 import { changeActive } from '../reducer/navs'

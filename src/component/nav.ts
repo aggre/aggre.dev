@@ -1,13 +1,13 @@
-import { html } from 'lit-html'
-import { repeat } from 'lit-html/directives/repeat'
-import { component, DirectiveFunction } from 'ullr/directive'
+import { html } from 'lit'
+import { repeat } from 'lit/directives/repeat.js'
+import { shadow } from '@aggre/ullr'
 import { a } from './a'
 import { Navs } from '../store/navs'
-import { style } from '../lib/style'
+import { DirectiveResult } from 'lit/directive.js'
 
-export const nav = (items: Navs): DirectiveFunction =>
-	component(html`
-		${style`
+export const nav = (items: Navs): DirectiveResult =>
+	shadow(html`
+		<style>
 			ul {
 				display: flex;
 				list-style: none;
@@ -25,7 +25,7 @@ export const nav = (items: Navs): DirectiveFunction =>
 				color: white;
 				border-radius: 99px;
 			}
-		`}
+		</style>
 		<nav>
 			<ul>
 				${repeat(

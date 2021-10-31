@@ -1,3 +1,4 @@
+import { expect } from '@esm-bundle/chai'
 import { base } from './base'
 import { route } from '../store/route'
 import { content } from '../store/content'
@@ -36,8 +37,8 @@ describe('base manager', () => {
 		const prevActiveNav = navs.value.findIndex((x) => x.active)
 		route.next('/post')
 		const nextActiveNav = navs.value.findIndex((x) => x.active)
-		expect(prevActiveNav).to.not.be(nextActiveNav)
-		expect(nextActiveNav).to.be(1)
+		expect(prevActiveNav).to.not.equal(nextActiveNav)
+		expect(nextActiveNav).to.be.equal(1)
 		cancel(subscriptions)
 	})
 
@@ -46,8 +47,8 @@ describe('base manager', () => {
 		const subscriptions = base(route, content)
 		const exSubscriptions = new Set([
 			content.pipe(skip(1)).subscribe((x) => {
-				expect(prevContent).to.not.be(x)
-				expect(x.meta?.title).to.be('🍣')
+				expect(prevContent).to.not.equal(x)
+				expect(x.meta?.title).to.be.equal('🍣')
 				cancel(subscriptions)
 			}),
 		])

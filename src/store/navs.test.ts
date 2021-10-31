@@ -1,3 +1,4 @@
+import { expect } from '@esm-bundle/chai'
 import { navs } from './navs'
 import { skip } from 'rxjs/operators'
 import { cancel } from '../lib/cancel'
@@ -9,7 +10,7 @@ describe('navs store', () => {
 	it('initial value', (done) => {
 		subs.add(
 			navs.subscribe((x) => {
-				expect(x).to.be.ok()
+				expect(x).to.be.ok
 				done()
 			})
 		)
@@ -30,7 +31,7 @@ describe('navs store', () => {
 		]
 		subs.add(
 			navs.pipe(skip(1)).subscribe((x) => {
-				expect(x).to.eql(next)
+				expect(x).to.be.eql(next)
 				done()
 			})
 		)

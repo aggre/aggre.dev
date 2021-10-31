@@ -1,3 +1,4 @@
+import { expect } from '@esm-bundle/chai'
 import { parseContent } from './parse-content'
 import { ContentMeta } from '../store/content'
 
@@ -22,8 +23,10 @@ description: お寿司
 `
 		)
 
-		expect((parsed.meta as ContentMeta).title).to.be('すし')
-		expect((parsed.meta as ContentMeta).image).to.be('/asset/image/sushi.png')
-		expect((parsed.meta as ContentMeta).description).to.be('お寿司')
+		expect((parsed.meta as ContentMeta).title).to.be.equal('すし')
+		expect((parsed.meta as ContentMeta).image).to.be.equal(
+			'/asset/image/sushi.png'
+		)
+		expect((parsed.meta as ContentMeta).description).to.be.equal('お寿司')
 	})
 })

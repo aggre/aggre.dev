@@ -1,3 +1,4 @@
+import { expect } from '@esm-bundle/chai'
 import { changeActive } from './navs'
 
 const navs: ReadonlyArray<{
@@ -19,7 +20,7 @@ const navs: ReadonlyArray<{
 
 describe('navs reducers', () => {
 	it('changeActive', () => {
-		expect(changeActive(navs, '/spec')).to.eql([
+		expect(changeActive(navs, '/spec')).to.be.eql([
 			{
 				label: 'test',
 				link: '/test',

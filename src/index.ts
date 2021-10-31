@@ -1,6 +1,6 @@
 /* eslint-disable functional/functional-parameters */
 /* eslint-disable functional/no-expression-statement */
-import { render, html } from 'lit-html'
+import { render, html } from 'lit'
 import { xApp } from './element/x-app'
 import { XEmbed } from './element/x-embed'
 import { content } from './store/content'
@@ -12,7 +12,7 @@ const { customElements } = window
 const APP = 'x-app'
 const EMBED = 'x-embed'
 const RENDERED = Boolean(document.querySelector(`${APP} > *`))
-const ROOT = document.querySelector(APP)
+const ROOT = document.querySelector<HTMLElement>(APP)
 customElements.define(APP, xApp)
 customElements.define(EMBED, XEmbed)
 customElements

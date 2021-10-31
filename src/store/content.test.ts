@@ -1,3 +1,4 @@
+import { expect } from '@esm-bundle/chai'
 import { content } from './content'
 import { skip } from 'rxjs/operators'
 import { Subscription } from 'rxjs'
@@ -10,7 +11,7 @@ describe('content store', () => {
 	it('initial value', (done) => {
 		subs.add(
 			content.subscribe((x) => {
-				expect(x).to.be.ok()
+				expect(x).to.be.ok
 				done()
 			})
 		)
@@ -27,7 +28,7 @@ describe('content store', () => {
 		}
 		subs.add(
 			content.pipe(skip(1)).subscribe((x) => {
-				expect(x).to.eql(next)
+				expect(x).to.be.eql(next)
 				done()
 			})
 		)

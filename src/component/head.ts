@@ -1,6 +1,5 @@
 import { ContentMeta } from '../store/content'
-import { html, TemplateResult } from 'lit-html'
-import { style } from '../lib/style'
+import { html, TemplateResult } from 'lit'
 
 const highlight = document.head.querySelector('#highlight')
 
@@ -52,7 +51,7 @@ export const head = (
 		href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700|Noto+Sans+JP:400,700"
 		rel="stylesheet"
 	/>
-	${style`
+	<style>
 		body {
 			margin: 0;
 			font-size: 1.1rem;
@@ -69,9 +68,9 @@ export const head = (
 		}
 		x-app {
 			display: none;
-			&.show {
-				display: block;
-			}
+		}
+		x-app.show {
+			display: block;
 		}
 
 		.hljs {
@@ -84,31 +83,31 @@ export const head = (
 			padding: 0.2rem 0.4rem;
 			border-radius: 99px;
 			color: white;
-			background: #4CAF50;
+			background: #4caf50;
 		}
 		blockquote {
 			position: relative;
 			background: whitesmoke;
-			padding: .2rem 1.4rem;
+			padding: 0.2rem 1.4rem;
 			margin: 1rem;
-			&::before {
-				content: '';
-				position: absolute;
-				display: block;
-				width: 2px;
-				left: 0;
-				top: 0;
-				height: 100%;
-				background: #ccc;
-			}
-			& p > code {
-				color: inherit;
-				background: #e3e3e3;
-			}
+		}
+		blockquote::before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 2px;
+			left: 0;
+			top: 0;
+			height: 100%;
+			background: #ccc;
+		}
+		blockquote p > code {
+			color: inherit;
+			background: #e3e3e3;
 		}
 		img {
 			max-width: 100%;
 			height: auto;
 		}
-	`}
+	</style>
 `

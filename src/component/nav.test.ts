@@ -1,5 +1,7 @@
+import { expect } from '@esm-bundle/chai'
 import { nav } from './nav'
-import { render, html } from 'lit-html'
+import { render, html } from 'lit'
+import { removeExtraString } from '../test'
 
 const opts: ReadonlyArray<any> = [
 	{
@@ -22,7 +24,7 @@ describe('<nav>', () => {
 			render(html` ${nav(opts)} `, document.body)
 			const el = (document.body.querySelector('ullr-shdw') as HTMLElement)
 				.shadowRoot as ShadowRoot
-			expect(el.querySelector('nav')).to.be.ok()
+			expect(el.querySelector('nav')).to.be.ok
 		})
 
 		it('active and inactive', () => {
@@ -42,16 +44,15 @@ describe('<nav>', () => {
 			const el = (document.body.querySelector('ullr-shdw') as HTMLElement)
 				.shadowRoot as ShadowRoot
 			Array.from(el.querySelectorAll('nav > ul > li')).forEach((item, i) => {
-				expect(item.querySelector('a')).to.be.ok()
+				expect(item.querySelector('a')).to.be.ok
 				expect(
 					(item.querySelector('a') as HTMLAnchorElement).getAttribute('href')
-				).to.be(opts[i].link)
+				).to.be.equal(opts[i].link)
 				expect(
-					(item.querySelector('a') as HTMLAnchorElement).innerHTML.replace(
-						/<!---->/g,
-						''
+					removeExtraString(
+						(item.querySelector('a') as HTMLAnchorElement).innerHTML
 					)
-				).to.be(opts[i].label)
+				).to.be.equal(opts[i].label)
 			})
 		})
 	})
