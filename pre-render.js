@@ -17,7 +17,11 @@ const getHTML = (browser) => async (pathname) => {
 	await page.goto(`http://localhost:${port}${pathname}`, {
 		waitUntil: 'domcontentloaded',
 	})
-	await page.waitForSelector('x-app > *')
+	await page
+		.waitForSelector('x-app > *', {
+			timeout: 5000,
+		})
+		.catch(console.log)
 	const html = await page.content()
 	console.info('render end', pathname)
 	return html
