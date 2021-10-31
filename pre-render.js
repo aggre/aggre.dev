@@ -10,7 +10,9 @@ const { listFiles } = require('list-files-in-dir')
 const serveConfig = require('./serve.json')
 const port = 5555
 const format = (h) =>
-	typeof h === 'string' ? h.replace(/<!---->|\s+?class="show"/g, '') : h
+	typeof h === 'string'
+		? h.replace(/<!--((?!-->)[\w\W])*-->|\s+?class="show"/g, '')
+		: h
 const getHTML = (browser) => async (pathname) => {
 	console.info('render start', pathname)
 	const page = await browser.newPage()

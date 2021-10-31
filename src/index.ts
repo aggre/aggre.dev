@@ -26,6 +26,11 @@ customElements
 
 base(route, content)
 
+let purged = false
 content.pipe(skip(RENDERED ? 2 : 0)).subscribe((x) => {
+	if (!purged && ROOT) {
+		while (ROOT.firstChild) ROOT.removeChild(ROOT.firstChild)
+		purged = true
+	}
 	render(html` ${markedHTML(x ? x.body : '')} `, ROOT || document.body)
 })
