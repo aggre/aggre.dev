@@ -20,7 +20,8 @@ export const base = (
 			)
 		)
 		.add(
-			content.subscribe((x) =>
+			content.subscribe((x) => {
+				document.title = x.meta?.title || 'aggre.io'
 				render(head(route.value, x ? x.meta : undefined), document.head)
-			)
+			})
 		)

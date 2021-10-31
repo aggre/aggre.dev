@@ -1,8 +1,6 @@
 import { ContentMeta } from '../store/content'
 import { html, TemplateResult } from 'lit'
 
-const highlight = document.head.querySelector('#highlight')
-
 export const head = (
 	route: string,
 	meta?: ContentMeta,
@@ -46,9 +44,12 @@ export const head = (
 		  `
 		: ''} <meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="//twitter.com/aggre_" />
-	${meta ? html`<title>${meta.title}</title>` : ''} ${highlight}
 	<link
 		href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,700|Noto+Sans+JP:400,700"
+		rel="stylesheet"
+	/>
+	<link
+		href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/atom-one-dark.min.css"
 		rel="stylesheet"
 	/>
 	<style>
