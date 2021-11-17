@@ -72,7 +72,7 @@
 		"puppeteer": "11.0.0",
 		"rollup": "2.60.0",
 		"tslib": "2.3.1",
-		"typescript": "4.4.4",
+		"typescript": "4.5.2",
 		"typescript-lit-html-plugin": "0.9.0",
 		"vite": "2.6.14",
 		"write": "2.0.0"
