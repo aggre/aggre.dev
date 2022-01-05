@@ -55,7 +55,7 @@
 		"@types/ramda": "0.27.62",
 		"@typescript-eslint/eslint-plugin": "5.9.0",
 		"@typescript-eslint/parser": "5.9.0",
-		"@web/test-runner": "0.13.23",
+		"@web/test-runner": "0.13.24",
 		"@web/test-runner-puppeteer": "0.10.4",
 		"babel-core": "6.26.3",
 		"babel-preset-env": "1.7.0",
