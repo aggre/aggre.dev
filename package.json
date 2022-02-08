@@ -35,7 +35,7 @@
 		"postcss": "8.4.6",
 		"postcss-preset-env": "7.3.1",
 		"ramda": "0.28.0",
-		"rxjs": "7.5.2",
+		"rxjs": "7.5.3",
 		"serve": "13.0.2",
 		"serve-handler": "6.1.3"
 	},
