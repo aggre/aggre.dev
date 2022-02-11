@@ -105,8 +105,11 @@ import { button } from './button'
 import { BehaviorSubject } from 'rxjs'
 
 const count = new BehaviorSubject(0)
-const click = <T>(store: BehaviorSubject<T>) => (next: () => T) => () =>
-	store.next(next())
+const click =
+	<T>(store: BehaviorSubject<T>) =>
+	(next: () => T) =>
+	() =>
+		store.next(next())
 const buttonClick = click(count)
 
 const template = () => html`
