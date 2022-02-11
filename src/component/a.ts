@@ -6,6 +6,7 @@ type Props = {
 	readonly content: TemplateResult | string
 }
 
+// eslint-disable-next-line functional/no-return-void
 const handler = (url: string) => (e: Event) => {
 	// eslint-disable-next-line functional/no-expression-statement
 	e.preventDefault()

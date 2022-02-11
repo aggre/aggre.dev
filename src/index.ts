@@ -1,3 +1,7 @@
+/* eslint-disable functional/no-loop-statement */
+/* eslint-disable functional/no-let */
+/* eslint-disable functional/no-conditional-statement */
+/* eslint-disable functional/no-return-void */
 /* eslint-disable functional/functional-parameters */
 /* eslint-disable functional/no-expression-statement */
 import { render, html } from 'lit'

@@ -1,3 +1,4 @@
+/* eslint-disable functional/no-return-void */
 import { render } from 'lit'
 import { fetchContent } from '../lib/fetch-content'
 import { navs } from '../store/navs'
@@ -21,7 +22,9 @@ export const base = (
 		)
 		.add(
 			content.subscribe((x) => {
+				// eslint-disable-next-line functional/no-expression-statement, functional/immutable-data
 				document.title = x.meta?.title || 'aggre.io'
+				// eslint-disable-next-line functional/no-expression-statement
 				render(head(route.value, x ? x.meta : undefined), document.head)
 			})
 		)
