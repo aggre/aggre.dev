@@ -54,8 +54,7 @@ image: /asset/image/talk-about-anime.jpg
 
 <x-embed>
 	<template>
-		 <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/MzN1gtqs_JPGEgcRnNo1uw/122039043181" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="http://hiratzuka.tumblr.com/post/122039043181">http://hiratzuka.tumblr.com/post/122039043181</a></div>  <script async src="https://assets.tumblr.com/post.js"></script>
-	</template>
+		<div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/Usl5BQZro6U46-xXq4KTAA/641848941000982529" data-did="742f417d0c0dbf9b86c40bc96b25bf1cecc4e69f"><a href="https://haikyeu.tumblr.com/post/641848941000982529/favorite-anime-openingsendings-kill-la-kill">https://haikyeu.tumblr.com/post/641848941000982529/favorite-anime-openingsendings-kill-la-kill</a></div>  <script async src="https://assets.tumblr.com/post.js"></script>	</template>
 </x-embed>
 
 <x-embed>
@@ -72,13 +71,12 @@ image: /asset/image/talk-about-anime.jpg
 
 <x-embed>
 	<template>
-		 <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/FXCzKAxF1MwU-fzhCRUaWw/178772903962" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://remiliia.tumblr.com/post/178772903962">https://remiliia.tumblr.com/post/178772903962</a></div>  <script async src="https://assets.tumblr.com/post.js"></script>
-	</template>
+		<div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/XojMStwSozJ4UaxWNiAZTQ/622633974358048768" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://pururin.tumblr.com/post/622633974358048768">https://pururin.tumblr.com/post/622633974358048768</a></div>  <script async src="https://assets.tumblr.com/post.js"></script>	</template>
 </x-embed>
 
 <x-embed>
 	<template>
-		 <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/_Y-1ewx53fXfZ8CRsiYgCw/179492337609" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://sen-ku.tumblr.com/post/179492337609">https://sen-ku.tumblr.com/post/179492337609</a></div>  <script async src="https://assets.tumblr.com/post.js"></script>
+		<div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/XojMStwSozJ4UaxWNiAZTQ/621435240373731328" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://pururin.tumblr.com/post/621435240373731328">https://pururin.tumblr.com/post/621435240373731328</a></div>  <script async src="https://assets.tumblr.com/post.js"></script>
 	</template>
 </x-embed>
 
@@ -130,7 +128,7 @@ image: /asset/image/talk-about-anime.jpg
 
 <x-embed>
 	<template>
-		 <div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/JYOs4eKQu_lj3A_bzwuFRw/172284992563" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://kemurikusa.tumblr.com/post/172284992563">https://kemurikusa.tumblr.com/post/172284992563</a></div>  <script async src="https://assets.tumblr.com/post.js"></script>
+		<div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/o2v3jaMoVbgoehl_f87tzQ/674304583088111616" data-did="9c2aef86ad66a45356f638013db3a160b9947a22"><a href="https://camu.tumblr.com/post/674304583088111616/sasuke-vs-naruto">https://camu.tumblr.com/post/674304583088111616/sasuke-vs-naruto</a></div>  <script async src="https://assets.tumblr.com/post.js"></script>
 	</template>
 </x-embed>
 
