@@ -30,7 +30,7 @@
 		"js-yaml": "4.1.0",
 		"lit": "2.2.3",
 		"lit-style": "1.1.4",
-		"markdown-it": "13.0.0",
+		"markdown-it": "13.0.1",
 		"micro": "9.3.4",
 		"postcss": "8.4.13",
 		"postcss-preset-env": "7.5.0",
