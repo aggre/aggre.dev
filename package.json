@@ -74,7 +74,7 @@
 		"tslib": "2.4.0",
 		"typescript": "4.6.4",
 		"typescript-lit-html-plugin": "0.9.0",
-		"vite": "2.9.7",
+		"vite": "2.9.8",
 		"write": "2.0.0"
 	}
 }
