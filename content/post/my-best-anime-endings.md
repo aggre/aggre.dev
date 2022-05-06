@@ -1,7 +1,7 @@
 ```yml
 title: My best anime endings
 description: Introducing my best anime endings.
-image: /asset/image/my-best-anime-endings.png
+image: /asset/image/my-best-anime-endings_.png
 ```
 
 # My best anime endings - 大好きなアニメ EDs
