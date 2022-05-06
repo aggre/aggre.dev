@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs'
-import forEach from 'ramda/es/forEach'
+import { forEach } from 'ramda'
 
 export const cancel = (
 	subscriptions: ReadonlySet<Subscription>
