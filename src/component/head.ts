@@ -106,8 +106,11 @@ export const head = (
 			color: inherit;
 			background: #e3e3e3;
 		}
-		img {
+		img,
+		iframe {
 			max-width: 100%;
+		}
+		img {
 			height: auto;
 		}
 	</style>
