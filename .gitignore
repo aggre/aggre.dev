@@ -69,3 +69,6 @@ test
 src/**/*.js
 
 .now
+
+# use yarn
+package-lock.json
