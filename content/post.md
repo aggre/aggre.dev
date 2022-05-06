@@ -4,6 +4,7 @@ description: aggre のブログ
 image: /asset/image/og.png
 ```
 
+- [My best anime endings - 大好きなアニメ EDs](/post/my-best-anime-endings)
 - [Governanceless DAO](/post/governanceless-dao)
 - [ウェブの歴史から Ethereum のレイヤー構造を俯瞰してみる](/post/review-of-ethereum-layered-structure-based-on-the-history-of-the-web)
 - [攻殻機動隊 SAC_2045 の映像は時代を作るものだと思った](/post/ghost-in-the-shell-sac_2045-makes-a-new-era)
