@@ -8,7 +8,7 @@
 		"start": "vite",
 		"build": "run-s html render",
 		"html": "vite build",
-		"render": "node pre-render.js",
+		"render": "node node_modules/puppeteer/install.js && node pre-render.js",
 		"test": "wtr dist/test.js --node-resolve --puppeteer",
 		"pretest": "rollup -c",
 		"lint": "eslint . --ext .ts,.js --fix",
