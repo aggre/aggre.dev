@@ -1,6 +1,6 @@
 ```yml
-title: aggre.io
-description: aggre.io
+title: aggre.dev
+description: aggre.dev
 image: /asset/image/og.png
 ```
 
@@ -23,4 +23,4 @@ image: /asset/image/og.png
 
 ---
 
-source code: https://github.com/aggre/aggre.io
+source code: https://github.com/aggre/aggre.dev

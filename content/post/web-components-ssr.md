@@ -105,7 +105,7 @@ content.pipe(skip(RENDERED ? 2 : 0)).subscribe((x) => {
 })
 ```
 
-( 全体は https://github.com/aggre/aggre.io/blob/master/src/index.ts にて確認できます )
+( 全体は https://github.com/aggre/aggre.dev/blob/master/src/index.ts にて確認できます )
 
 `customElements.define(APP, xApp)` によって Custom Elements が定義されると、Shadow DOM 内部にアプリケーションがレンダリングされます。この処理は必ず実行されます。
 

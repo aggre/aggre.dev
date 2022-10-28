@@ -23,7 +23,7 @@ export const base = (
 		.add(
 			content.subscribe((x) => {
 				// eslint-disable-next-line functional/no-expression-statement, functional/immutable-data
-				document.title = x.meta?.title || 'aggre.io'
+				document.title = x.meta?.title || 'aggre.dev'
 				// eslint-disable-next-line functional/no-expression-statement
 				render(head(route.value, x ? x.meta : undefined), document.head)
 			})

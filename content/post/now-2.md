@@ -6,7 +6,7 @@ image: /asset/image/og.png
 
 # Now 2 にアップグレードした
 
-このページは [Now](https://zeit.co/now) でホスティングしているが、11 月 9 日に [Now 2.0](https://zeit.co/blog/now-2) がリリースされた。このサイトは [6 日前に対応](https://github.com/aggre/aggre.io/commit/5eadd67a65f924c8d5a5f2dc23c5815474303b43) していたのだが、引っ越しなどが続きなかなか記事にできなかった。
+このページは [Now](https://zeit.co/now) でホスティングしているが、11 月 9 日に [Now 2.0](https://zeit.co/blog/now-2) がリリースされた。このサイトは [6 日前に対応](https://github.com/aggre/aggre.dev/commit/5eadd67a65f924c8d5a5f2dc23c5815474303b43) していたのだが、引っ越しなどが続きなかなか記事にできなかった。
 
 さて、[もろもろの変更点は公式を見ていただくのが一番分かりやすい](https://zeit.co/blog/now-2) として、実際に試した所感を超簡単に書く。
 
@@ -31,7 +31,7 @@ Now 2.0 では npm script を実行しなくなった。代わりに `builds` �
 ```json
 {
 	"version": 2,
-	"alias": "aggre.io",
+	"alias": "aggre.dev",
 	"builds": [{ "src": "dist/**", "use": "@now/static" }],
 	"routes": [{ "src": "/(.*)", "dest": "/dist/$1" }]
 }

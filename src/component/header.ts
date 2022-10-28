@@ -27,7 +27,7 @@ export const header = always(
 			}
 		</style>
 		<header>
-			<div class="brand">${a({ href: '/', content: 'aggre.io' })}</div>
+			<div class="brand">${a({ href: '/', content: 'aggre.dev' })}</div>
 			<div class="nav">${subscribe(navs, (x) => html` ${nav(x)} `)}</div>
 		</header>
 	`)

@@ -4,7 +4,7 @@ import { html, TemplateResult } from 'lit'
 export const head = (
 	route: string,
 	meta?: ContentMeta,
-	domain = 'aggre.io',
+	domain = 'aggre.dev',
 	protocol = 'https'
 ): TemplateResult => html`
 	<script

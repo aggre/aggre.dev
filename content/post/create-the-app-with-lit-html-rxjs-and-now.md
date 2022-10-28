@@ -14,7 +14,7 @@ image: /asset/image/og.png
 
 なので今回は lit-html を使ったアプリケーションの話にする。
 
-ソースコードは [GitHub](https://github.com/aggre/aggre.io) で公開しているし、今さらライブラリのスタックとかで記事にするのもどうなんだろう、という気がしないでもない。でも、lit-html はとても良い選択だと思う一方でマイナーだという印象があり、そこに最近よくトピックにあがる関数型のパラダイムが重なり、書いてみることにした。
+ソースコードは [GitHub](https://github.com/aggre/aggre.dev) で公開しているし、今さらライブラリのスタックとかで記事にするのもどうなんだろう、という気がしないでもない。でも、lit-html はとても良い選択だと思う一方でマイナーだという印象があり、そこに最近よくトピックにあがる関数型のパラダイムが重なり、書いてみることにした。
 
 ついでに lit-html はじめ Web Components 界隈のスタックは SSR に無頓着というか、実際 SSR しづらい問題もあったので、その辺に対する _ひとつの_ 回答も示したいと思った。
 
@@ -70,7 +70,7 @@ lit-html によるテンプレートは、`render()` を実行する度に差分
 
 ## アプリケーションの構築
 
-ソースコードは [GitHub](https://github.com/aggre/aggre.io) にあるので詳しくはそちらを参考にしてもらえればと思う。
+ソースコードは [GitHub](https://github.com/aggre/aggre.dev) にあるので詳しくはそちらを参考にしてもらえればと思う。
 
 ここでは簡単にコードを追ってみたい。
 
@@ -82,7 +82,7 @@ lit-html によるテンプレートは、`render()` を実行する度に差分
 render(html` ${root} `, document.getElementById('root'))
 ```
 
-ソースでいうと https://github.com/aggre/aggre.io/blob/master/src/index.ts にあたる。
+ソースでいうと https://github.com/aggre/aggre.dev/blob/master/src/index.ts にあたる。
 
 ここでマウントされる `root` というテンプレートは、RxJS の BehaviorSubject を購読して、中身を書き換える。
 
@@ -99,7 +99,7 @@ export const root = directive((part) => {
 })
 ```
 
-https://github.com/aggre/aggre.io/blob/master/src/component/root.ts
+https://github.com/aggre/aggre.dev/blob/master/src/component/root.ts
 
 テンプレートに `x-app` という要素が出てくるが、後述する SSR のために登場する Custom Elements で、アプリケーションで唯一の Custom Elements だ。実装は単純で、すべての振る舞いを lit-html 側に寄せている。
 
@@ -110,7 +110,7 @@ import { app } from '../component/app'
 export const xApp = customElements(() => app())
 ```
 
-https://github.com/aggre/aggre.io/blob/master/src/element/x-app.ts
+https://github.com/aggre/aggre.dev/blob/master/src/element/x-app.ts
 
 `app()` というのがアプリケーションの本体になる。
 
@@ -146,7 +146,7 @@ export const app = () => html`
 `
 ```
 
-https://github.com/aggre/aggre.io/blob/master/src/component/app.ts
+https://github.com/aggre/aggre.dev/blob/master/src/component/app.ts
 
 Custom Elements 内の Shadow DOM でカプセル化されるため、`style` 要素はそのまま記述する。あとは、`<slot></slot>` に `x-app` の子要素が入ってくる。もちろん標準仕様としての `slot` なので、実装はランタイムに委ねている。
 
@@ -181,13 +181,13 @@ export const header = () =>
 			}
 		</style>
 		<header>
-			<div class="brand">${a({ href: '/', content: 'aggre.io' })}</div>
+			<div class="brand">${a({ href: '/', content: 'aggre.dev' })}</div>
 			<div class="nav">${subscribe(navs, (x) => nav(x))}</div>
 		</header>
 	`)
 ```
 
-https://github.com/aggre/aggre.io/blob/master/src/component/header.ts
+https://github.com/aggre/aggre.dev/blob/master/src/component/header.ts
 
 このアプリケーションもといホームページはシンプルなので、大体こんな感じだ。
 
@@ -229,11 +229,11 @@ Slotted なのか Slotting なのか Slots なのか不安だが、`slot` によ
 
 `jsdom` を使って実装するのも試したし、実際限定的ではあるが ullr にも SSR API を入れた。が、不安定極まりなかった。
 
-[当初は SSR サーバを書いていた](https://github.com/aggre/aggre.io/blob/1666d5b4fd2f77dc7454eec60ed62c1f57189cec/index.js) が、デプロイしてみると PaaS で puppeteer が動かないことが分かった。サーバーレス環境とかで puppeteer が走らないことはよくあって、Docker でサーブするとかも試したものの、疲弊してきたので今回はローカルか CI で **puppeteer を使って静的ファイルを書き出す** というアプローチにスイッチした。
+[当初は SSR サーバを書いていた](https://github.com/aggre/aggre.dev/blob/1666d5b4fd2f77dc7454eec60ed62c1f57189cec/index.js) が、デプロイしてみると PaaS で puppeteer が動かないことが分かった。サーバーレス環境とかで puppeteer が走らないことはよくあって、Docker でサーブするとかも試したものの、疲弊してきたので今回はローカルか CI で **puppeteer を使って静的ファイルを書き出す** というアプローチにスイッチした。
 
 意図せず lit-html 製の Static Site Generator を作ってしまった。
 
-即席で書いたのでコードはかなり汚い。もし興味があったら [これ](https://github.com/aggre/aggre.io/blob/master/pre-render.js) がソースなので、優しいまなざしで見てほしい。
+即席で書いたのでコードはかなり汚い。もし興味があったら [これ](https://github.com/aggre/aggre.dev/blob/master/pre-render.js) がソースなので、優しいまなざしで見てほしい。
 
 ## デプロイ
 

@@ -17,17 +17,17 @@ describe('<head>', () => {
 		const el = document.head
 		expect(
 			(el.querySelector('link[rel=canonical]') as Element).getAttribute('href')
-		).to.be.equal('https://aggre.io/test')
+		).to.be.equal('https://aggre.dev/test')
 		expect(
 			(el.querySelector('meta[property="og:url"]') as Element).getAttribute(
 				'content'
 			)
-		).to.be.equal('https://aggre.io/test')
+		).to.be.equal('https://aggre.dev/test')
 		expect(
-			(el.querySelector(
-				'meta[property="og:site_name"]'
-			) as Element).getAttribute('content')
-		).to.be.equal('aggre.io')
+			(
+				el.querySelector('meta[property="og:site_name"]') as Element
+			).getAttribute('content')
+		).to.be.equal('aggre.dev')
 		// expect(
 		// 	removeExtraString((el.querySelector('title') as Element).innerHTML)
 		// ).to.be.equal('Test')
@@ -42,19 +42,19 @@ describe('<head>', () => {
 			)
 		).to.be.equal('this is a test')
 		expect(
-			(el.querySelector(
-				'meta[property="og:description"]'
-			) as Element).getAttribute('content')
+			(
+				el.querySelector('meta[property="og:description"]') as Element
+			).getAttribute('content')
 		).to.be.equal('this is a test')
 		expect(
 			(el.querySelector('meta[property="og:image"]') as Element).getAttribute(
 				'content'
 			)
-		).to.be.equal('https://aggre.io/test.jpg')
+		).to.be.equal('https://aggre.dev/test.jpg')
 		expect(
 			(el.querySelector('meta[name="twitter:image"]') as Element).getAttribute(
 				'content'
 			)
-		).to.be.equal('https://aggre.io/test.jpg')
+		).to.be.equal('https://aggre.dev/test.jpg')
 	})
 })
