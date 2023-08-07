@@ -52,7 +52,7 @@
 		"@types/expect.js": "0.3.29",
 		"@types/highlight.js": "9.12.4",
 		"@types/js-yaml": "4.0.5",
-		"@types/markdown-it": "12.2.3",
+		"@types/markdown-it": "13.0.0",
 		"@types/mocha": "10.0.1",
 		"@types/node": "18.17.3",
 		"@types/ramda": "0.29.3",
