@@ -48,7 +48,7 @@
 		"@rollup/plugin-json": "6.0.1",
 		"@rollup/plugin-multi-entry": "6.0.1",
 		"@rollup/plugin-node-resolve": "15.2.2",
-		"@rollup/plugin-typescript": "11.1.4",
+		"@rollup/plugin-typescript": "11.1.5",
 		"@types/expect.js": "0.3.30",
 		"@types/highlight.js": "9.12.4",
 		"@types/js-yaml": "4.0.6",
