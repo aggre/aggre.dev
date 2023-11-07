@@ -762,10 +762,10 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.0.tgz#5fb2e536c1ae9bf35366eed879e827fa59ca41c2"
   integrity sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==
 
-"@types/expect.js@0.3.31":
-  version "0.3.31"
-  resolved "https://registry.yarnpkg.com/@types/expect.js/-/expect.js-0.3.31.tgz#18b82cc306914cf25b8b3c67d026d08a6df621d7"
-  integrity sha512-J/wcO/bk4ob/c5eHcLwCx32eBmj7/I1stP2bZkkK/7hA5x2nTZSbXt5DydYrXDXZZJhMPKCgbHax1yuz74Hv7Q==
+"@types/expect.js@0.3.32":
+  version "0.3.32"
+  resolved "https://registry.yarnpkg.com/@types/expect.js/-/expect.js-0.3.32.tgz#ef70862d413f4e1fbc0bbc01c660d60089ac4d2c"
+  integrity sha512-vUK0KSPtQTeANmOfiqsNNA/8hJ0xz8gOyB0ZhYRtoYOZBtZYir7ujNGr6GKw2hJAjltW0ocCNIGn9YxIXTT99Q==
 
 "@types/express-serve-static-core@^4.17.18":
   version "4.17.28"
