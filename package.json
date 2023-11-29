@@ -54,7 +54,7 @@
 		"@types/js-yaml": "4.0.9",
 		"@types/markdown-it": "13.0.7",
 		"@types/mocha": "10.0.6",
-		"@types/node": "20.10.0",
+		"@types/node": "20.10.1",
 		"@types/ramda": "0.29.9",
 		"@typescript-eslint/eslint-plugin": "5.62.0",
 		"@typescript-eslint/parser": "5.62.0",
