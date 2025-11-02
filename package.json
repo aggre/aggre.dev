@@ -71,7 +71,7 @@
 		"mocha": "10.2.0",
 		"npm-run-all2": "5.0.2",
 		"postcss-import": "15.1.0",
-		"prettier": "3.2.4",
+		"prettier": "3.6.2",
 		"puppeteer": "19.11.1",
 		"rollup": "3.29.4",
 		"tslib": "2.6.2",
