@@ -70,7 +70,7 @@
 		"list-files-in-dir": "0.1.5",
 		"mocha": "10.2.0",
 		"npm-run-all2": "5.0.2",
-		"postcss-import": "15.1.0",
+		"postcss-import": "16.1.1",
 		"prettier": "3.2.4",
 		"puppeteer": "19.11.1",
 		"rollup": "3.29.4",
